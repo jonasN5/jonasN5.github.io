@@ -59,7 +59,7 @@ async function main() {
 
     await commentOnIssue(
       issue.number,
-      `Nouvelle recette générée par Mistral AI : ${prUrl}\n\n- Catégorie : ${recipe.category}\n- Difficulté : ${recipe.difficulty}\n- ${recipe.steps.length} étapes, ${recipe.ingredients.reduce((n, g) => n + g.items.length, 0)} ingrédients\n- Traductions : français, anglais, italien`
+      `Nouvelle recette générée par Mistral AI : ${prUrl}\n\n- Catégorie : ${recipe.category}\n- Difficulté : ${recipe.difficulty}\n- ${recipe.steps.length} étapes, ${recipe.ingredients.reduce((n, g) => n + g.items.length, 0)} ingrédients\n- Traductions : français, allemand, anglais, espagnol`
     )
     console.log(`Done: ${prUrl}`)
   } catch (err) {

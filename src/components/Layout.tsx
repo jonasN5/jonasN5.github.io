@@ -1,13 +1,14 @@
 import { Outlet, Link, useLocation } from "react-router-dom"
-import { Home, BookOpen, PlusCircle, Info } from "lucide-react"
+import { Home, BookOpen, PlusCircle, HelpCircle } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { motion, useReducedMotion } from "motion/react"
 import { useState, useRef, useEffect } from "react"
 
 const LANGUAGES = [
-  { code: "en", label: "English" },
   { code: "fr", label: "Français" },
-  { code: "it", label: "Italiano" },
+  { code: "de", label: "Deutsch" },
+  { code: "en", label: "English" },
+  { code: "es", label: "Español" },
 ]
 
 function LanguageSwitcher() {
@@ -69,7 +70,7 @@ export function Layout() {
   const navItems = [
     { to: "/", icon: Home, label: t("nav.home") },
     { to: "/recipes", icon: BookOpen, label: t("nav.recipes") },
-    { to: "/about", icon: Info, label: t("nav.about") },
+    { to: "/contribuer", icon: HelpCircle, label: t("nav.contribute") },
   ]
 
   return (
