@@ -1,0 +1,40 @@
+name: "Recette (fichier)"
+description: "Ajouter une recette en joignant un document, un PDF ou une photo"
+title: "[Recette] "
+labels: ["recipe-submission", "needs-formatting"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Vous avez une recette dans un document, un PDF, un scan ou une photo ? Téléversez-la ici — Mistral AI se chargera de la mettre en forme pour le site.
+
+  - type: input
+    id: title
+    attributes:
+      label: Nom de la recette
+      placeholder: "ex. Lasagnes de la tante Marie"
+    validations:
+      required: true
+
+  - type: textarea
+    id: file
+    attributes:
+      label: Fichier de la recette
+      description: "Glissez-déposez votre fichier (PDF, document Word, image, photo d'une recette manuscrite…)"
+      placeholder: "Déposer le fichier ici ou coller une image"
+    validations:
+      required: true
+
+  - type: textarea
+    id: cover_image
+    attributes:
+      label: Photo du plat (optionnel)
+      description: "Glissez-déposez ou collez une photo du plat terminé"
+      placeholder: "Déposer une image ici ou la coller depuis le presse-papiers"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optionnel)
+      description: "Tout ce qu'il faut savoir : origine, personne qui la tient, variantes, astuces…"
+      placeholder: "C'est la recette de ma tante Marie, ajustée pour un moule plus grand."

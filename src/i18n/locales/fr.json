@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "recipes": "Recettes",
+    "add": "Ajouter",
+    "about": "À propos"
+  },
+  "home": {
+    "subtitle": "Recettes de grand-mère, de grand-père, de maman, de papa, d'amis, des internets ou d'ailleurs",
+    "title": "Bon appétit",
+    "searchPlaceholder": "Chercher une recette..."
+  },
+  "about": {
+    "heroTitle": "Le cœur de",
+    "heroTitleItalic": "la maison",
+    "heirloomTitle": "Un héritage numérique",
+    "intro": "Nous avions des recettes partout : onglets en favoris, carnets cornés, captures d'écran, recettes manuscrites de nos grands-mères, grands-pères, mères, pères, amis et collègues. Il nous fallait un endroit douillet pour tout rassembler.",
+    "story": "Recettes Familiales est cet endroit. Un site chaleureux et simple où l'on retrouve facilement les recettes collectées au fil des années. Pas de publicités, pas de pop-ups, pas de comptes. Juste les recettes.",
+    "builtTitle": "La cuisine numérique",
+    "builtIntro": "Ce site a été construit avec l'aide de l'IA. L'interface a été générée avec Google Stitch et la stack technique raffinée avec Perplexity (bibliothèque de recherche, animations, framework CSS...).",
+    "builtContent": "Les nouvelles recettes sont gérées via des GitHub Issues avec des modèles personnalisés, consommés par une GitHub Action qui appelle Mistral AI pour extraire la recette, générer les metadata de filtres et la traduire automatiquement en anglais et en italien.",
+    "thanks": "Un grand merci à",
+    "thanksDetail": "pour l'inspiration initiale à la machine à café."
+  },
+  "recipes": {
+    "title": "Recettes",
+    "description": "Recettes de grand-mère, de grand-père, de maman, de papa, d'amis, des internets ou d'ailleurs",
+    "noResults": "La marmite est vide !",
+    "noResultsHint": "Essayez d'autres filtres.",
+    "searchPlaceholder": "Chercher des recettes..."
+  },
+  "recipe": {
+    "notFound": "Recette introuvable",
+    "backToRecipes": "Retour aux recettes",
+    "back": "Retour",
+    "prep": "Prep :",
+    "cook": "Cuisson :",
+    "servings": "portions",
+    "ingredients": "Ingrédients",
+    "instructions": "Préparation",
+    "tips": "Conseils",
+    "history": "Histoire",
+    "source": "Source",
+    "difficulty": "Difficulté",
+    "step": "Étape {{number}}",
+    "print": "Imprimer la recette",
+    "resetChecks": "Réinitialiser",
+    "prev": "Préc.",
+    "prevStep": "Étape précédente",
+    "next": "Suiv.",
+    "nextStep": "Étape suivante",
+    "stepOf": "Étape {{current}} sur {{total}}"
+  },
+  "filter": {
+    "title": "Filtrer les recettes",
+    "category": "Catégorie",
+    "difficulty": "Difficulté",
+    "time": "Temps total",
+    "prep": "Temps de préparation",
+    "steps": "Nombre d'étapes",
+    "ingredients": "Nombre d'ingrédients",
+    "diet": "Régime & style",
+    "season": "Saison & occasion",
+    "origin": "Origine",
+    "clearAll": "Supprimer tous les filtres",
+    "openFilters": "Ouvrir les filtres"
+  },
+  "origins": {
+    "famille": "Recette de famille",
+    "amis": "Recette d'amis",
+    "grand-mere": "Mamie",
+    "grand-pere": "Papi",
+    "internet": "Trouvée en ligne",
+    "livre": "Livre de cuisine"
+  },
+  "stepsOptions": {
+    "simple": "✌️ ≤ 4 étapes",
+    "medium": "👨‍🍳 5–7 étapes",
+    "complex": "🎓 ≥ 8 étapes"
+  },
+  "ingredientsOptions": {
+    "few": "🛒 ≤ 6 ingrédients",
+    "moderate": "🧺 7–11 ingrédients",
+    "many": "📦 ≥ 12 ingrédients"
+  },
+  "tags": {
+    "végétarien": "🌿 Végétarien",
+    "végétalien": "🌱 Végétalien",
+    "vegan": "🌱 Vegan",
+    "sans-gluten": "🌾 Sans gluten",
+    "sans-lactose": "🥛 Sans lactose",
+    "léger": "🪶 Léger",
+    "printemps": "🌸 Printemps",
+    "été": "☀️ Été",
+    "automne": "🍂 Automne",
+    "hiver": "❄️ Hiver",
+    "noël": "🎄 Noël",
+    "pâques": "🐣 Pâques",
+    "apéro": "🥂 Apéro",
+    "fête": "🎉 Fête"
+  },
+  "prepTimeOptions": {
+    "short": "🥗 ≤ 10 min",
+    "medium": "👨‍🍳 11–30 min",
+    "long": "⏳ > 30 min"
+  },
+  "timeOptions": {
+    "quick": "⚡ ≤ 20 min",
+    "medium": "🕐 21–45 min",
+    "long": "🍳 > 45 min"
+  },
+  "categories": {
+    "Antipasti": "Entrées",
+    "Pasta": "Pâtes",
+    "Gnocchi": "Gnocchi",
+    "Risotto": "Risotto",
+    "Insalate": "Salades",
+    "Secondi": "Plats principaux",
+    "Contorni": "Accompagnements",
+    "Dolci": "Desserts",
+    "Pizze": "Pizzas",
+    "Pane": "Pains",
+    "Bambini": "Enfants",
+    "Breakfast": "Petit-déj",
+    "Brunch": "Brunch"
+  },
+  "difficulties": {
+    "Facile": "Facile",
+    "Medio": "Moyen",
+    "Difficile": "Difficile"
+  }
+}

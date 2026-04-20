@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Home",
+    "recipes": "Recipes",
+    "add": "Add",
+    "about": "About"
+  },
+  "home": {
+    "subtitle": "Family recipes from grandma, grandpa, mum, dad, friends, the internet or elsewhere",
+    "title": "Bon appétit",
+    "searchPlaceholder": "Search a recipe..."
+  },
+  "about": {
+    "heroTitle": "The heart of",
+    "heroTitleItalic": "the home",
+    "heirloomTitle": "A digital heirloom",
+    "intro": "We had recipes everywhere: bookmarked tabs, dog-eared notebooks, screenshots, hand-written recipes from grandma, grandpa, mother, father, friends, colleagues and more. We needed one cozy place to gather them all.",
+    "story": "Recettes Familiales is that place. A warm, simple website where we can easily find the recipes we've collected over the years. No ads, no popups, no accounts. Just the recipes.",
+    "builtTitle": "The digital kitchen",
+    "builtIntro": "This website was built with the help of AI tools. Google Stitch generated the initial UI and Perplexity helped pick the tech stack — the fuzzy search library, animations, CSS framework...",
+    "builtContent": "New recipes are submitted through GitHub Issues with custom templates, consumed by a GitHub Action that calls Mistral AI to extract the recipe, generate the filter metadata, and translate it automatically into French, English and Italian.",
+    "thanks": "A big thank you to",
+    "thanksDetail": "for the initial spark next to the coffee machine."
+  },
+  "recipes": {
+    "title": "Recipes",
+    "description": "Family recipes from grandma, grandpa, mum, dad, friends, the internet or elsewhere",
+    "noResults": "The pot is empty!",
+    "noResultsHint": "Try different filters.",
+    "searchPlaceholder": "Search recipes..."
+  },
+  "recipe": {
+    "notFound": "Recipe not found",
+    "backToRecipes": "Back to recipes",
+    "back": "Back",
+    "prep": "Prep:",
+    "cook": "Cook:",
+    "servings": "servings",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions",
+    "tips": "Tips",
+    "history": "The story",
+    "source": "Source",
+    "difficulty": "Difficulty",
+    "step": "Step {{number}}",
+    "print": "Print recipe",
+    "resetChecks": "Reset",
+    "prev": "Prev",
+    "prevStep": "Previous step",
+    "next": "Next",
+    "nextStep": "Next step",
+    "stepOf": "Step {{current}} of {{total}}"
+  },
+  "filter": {
+    "title": "Filter recipes",
+    "category": "Category",
+    "difficulty": "Difficulty",
+    "time": "Total time",
+    "prep": "Prep time",
+    "steps": "Number of steps",
+    "ingredients": "Number of ingredients",
+    "diet": "Diet & lifestyle",
+    "season": "Season & occasion",
+    "origin": "Origin",
+    "clearAll": "Clear all filters",
+    "openFilters": "Open filters"
+  },
+  "origins": {
+    "famille": "Family recipe",
+    "amis": "From friends",
+    "grand-mere": "Grandma",
+    "grand-pere": "Grandpa",
+    "internet": "Found online",
+    "livre": "Cookbook"
+  },
+  "stepsOptions": {
+    "simple": "✌️ ≤ 4 steps",
+    "medium": "👨‍🍳 5–7 steps",
+    "complex": "🎓 ≥ 8 steps"
+  },
+  "ingredientsOptions": {
+    "few": "🛒 ≤ 6 items",
+    "moderate": "🧺 7–11 items",
+    "many": "📦 ≥ 12 items"
+  },
+  "tags": {
+    "végétarien": "🌿 Vegetarian",
+    "végétalien": "🌱 Vegan",
+    "vegan": "🌱 Vegan",
+    "sans-gluten": "🌾 Gluten-free",
+    "sans-lactose": "🥛 Dairy-free",
+    "léger": "🪶 Light",
+    "printemps": "🌸 Spring",
+    "été": "☀️ Summer",
+    "automne": "🍂 Autumn",
+    "hiver": "❄️ Winter",
+    "noël": "🎄 Christmas",
+    "pâques": "🐣 Easter",
+    "apéro": "🥂 Apéritif",
+    "fête": "🎉 Party"
+  },
+  "prepTimeOptions": {
+    "short": "🥗 ≤ 10 min",
+    "medium": "👨‍🍳 11–30 min",
+    "long": "⏳ > 30 min"
+  },
+  "timeOptions": {
+    "quick": "⚡ ≤ 20 min",
+    "medium": "🕐 21–45 min",
+    "long": "🍳 > 45 min"
+  },
+  "categories": {
+    "Antipasti": "Starters",
+    "Pasta": "Pasta",
+    "Gnocchi": "Gnocchi",
+    "Risotto": "Risotto",
+    "Insalate": "Salads",
+    "Secondi": "Main courses",
+    "Contorni": "Sides",
+    "Dolci": "Desserts",
+    "Pizze": "Pizzas",
+    "Pane": "Breads",
+    "Bambini": "Kids",
+    "Breakfast": "Breakfast",
+    "Brunch": "Brunch"
+  },
+  "difficulties": {
+    "Facile": "Easy",
+    "Medio": "Medium",
+    "Difficile": "Hard"
+  }
+}
