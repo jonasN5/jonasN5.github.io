@@ -1,0 +1,56 @@
+name: Add Recipe via Mistral AI
+
+on:
+  issues:
+    types: [opened, labeled, edited]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: add-recipe-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  add-recipe:
+    if: contains(github.event.issue.labels.*.name, 'recipe-submission')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Generate recipe with Mistral
+        id: generate
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          MISTRAL_MODEL_TEXT: ${{ vars.MISTRAL_MODEL_TEXT || 'mistral-small-latest' }}
+          MISTRAL_MODEL_VISION: ${{ vars.MISTRAL_MODEL_VISION || 'pixtral-12b-2409' }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: node scripts/add-recipe.mjs
+
+      - name: Report failure on issue
+        if: failure() && steps.generate.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "The recipe intake workflow failed. See the run log: $RUN_URL"

@@ -1,0 +1,39 @@
+name: "Recette (URL)"
+description: "Ajouter une recette en partageant le lien vers une page web"
+title: "[Recette] "
+labels: ["recipe-submission", "needs-formatting"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Vous avez une recette sur un site web ? Partagez le lien ici — Mistral AI se chargera de la mettre en forme pour le site.
+
+  - type: input
+    id: title
+    attributes:
+      label: Nom de la recette
+      placeholder: "ex. Clafoutis aux cerises"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL de la recette
+      placeholder: "https://example.com/recettes/clafoutis-aux-cerises"
+    validations:
+      required: true
+
+  - type: textarea
+    id: cover_image
+    attributes:
+      label: Photo du plat (optionnel)
+      description: "Glissez-déposez ou collez une photo du plat terminé"
+      placeholder: "Déposer une image ici ou la coller depuis le presse-papiers"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optionnel)
+      description: "Tout ce qu'il faut savoir : origine, variantes, astuces…"
+      placeholder: "Version adaptée par ma mère, avec moitié moins de sucre."

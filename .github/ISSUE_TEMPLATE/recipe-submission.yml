@@ -1,0 +1,151 @@
+name: "Recette (formulaire)"
+description: "Ajouter une nouvelle recette via un formulaire structuré"
+title: "[Recette] "
+labels: ["recipe-submission"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Titre de la recette
+      description: "Nom de la recette"
+      placeholder: "ex. Tarte aux pommes de mamie"
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Slug
+      description: "Identifiant pour l'URL (minuscules, tirets uniquement)"
+      placeholder: "ex. tarte-aux-pommes-de-mamie"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Description courte de la recette (1 à 2 phrases)"
+      placeholder: "La tarte aux pommes traditionnelle de ma grand-mère, avec une pâte brisée et une touche de cannelle."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Catégorie
+      options:
+        - Antipasti
+        - Pasta
+        - Secondi
+        - Insalate
+        - Pizze
+        - Pane
+        - Dolci
+        - Bambini
+        - Breakfast
+        - Brunch
+    validations:
+      required: true
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulté
+      options:
+        - Facile
+        - Medio
+        - Difficile
+    validations:
+      required: true
+
+  - type: input
+    id: prep_time
+    attributes:
+      label: Temps de préparation (minutes)
+      placeholder: "15"
+    validations:
+      required: true
+
+  - type: input
+    id: cook_time
+    attributes:
+      label: Temps de cuisson (minutes)
+      placeholder: "30"
+    validations:
+      required: true
+
+  - type: input
+    id: servings
+    attributes:
+      label: Portions
+      placeholder: "6"
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: "Tags séparés par des virgules (en français)"
+      placeholder: "dessert, pommes, traditionnel, automne"
+    validations:
+      required: true
+
+  - type: textarea
+    id: ingredients
+    attributes:
+      label: Ingrédients
+      description: "Un ingrédient par ligne. Utilisez '## Nom du groupe' pour créer des groupes."
+      placeholder: |
+        ## Pâte
+        250g de farine
+        125g de beurre
+        1 pincée de sel
+        ## Garniture
+        6 pommes
+        80g de sucre
+        1 cuillère à café de cannelle
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes
+      description: "Une étape par ligne"
+      placeholder: |
+        Préchauffer le four à 180°C.
+        Préparer la pâte brisée et l'étaler dans un moule.
+        Éplucher et couper les pommes en lamelles.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tips
+    attributes:
+      label: Conseils (optionnel)
+      description: "Un conseil par ligne"
+      placeholder: |
+        Laisser reposer la pâte 30 min au frais avant de l'étaler.
+
+  - type: textarea
+    id: history
+    attributes:
+      label: Histoire (optionnel)
+      description: "Une anecdote, une histoire ou le contexte de cette recette"
+      placeholder: "Cette recette se transmet dans la famille depuis quatre générations..."
+
+  - type: input
+    id: source
+    attributes:
+      label: Source (optionnel)
+      description: "D'où vient cette recette"
+      placeholder: "Mamie Jeanne"
+
+  - type: textarea
+    id: cover_image
+    attributes:
+      label: Image de couverture (optionnel)
+      description: "Glissez-déposez ou collez une photo du plat terminé"
+      placeholder: "Déposer une image ici ou la coller depuis le presse-papiers"
