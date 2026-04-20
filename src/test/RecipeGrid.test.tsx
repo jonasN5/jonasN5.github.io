@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import { MemoryRouter } from "react-router-dom"
-import { describe, it, expect } from "vitest"
+import { describe, it, expect, beforeEach } from "vitest"
+import i18n from "i18next"
 import { RecipeGrid } from "@/components/RecipeGrid"
 import type { RecipeSummary } from "@/types/recipe"
 
@@ -40,6 +41,10 @@ function renderGrid(props: Parameters<typeof RecipeGrid>[0]) {
 }
 
 describe("RecipeGrid", () => {
+  beforeEach(() => {
+    i18n.changeLanguage("en")
+  })
+
   it("shows skeletons while loading", () => {
     const { container } = renderGrid({ recipes: [], loading: true })
     // Three skeleton placeholders rendered
