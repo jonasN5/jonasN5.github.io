@@ -4,7 +4,7 @@ import { Layout } from "./components/Layout"
 import { HomePage } from "./pages/HomePage"
 import { RecipesPage } from "./pages/RecipesPage"
 import { RecipePage } from "./pages/RecipePage"
-import { AboutPage } from "./pages/AboutPage"
+import { ContributePage } from "./pages/ContributePage"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -23,7 +23,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/recipes" element={<RecipesPage />} />
         <Route path="/recipe/:slug" element={<RecipePage />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contribuer" element={<ContributePage />} />
       </Route>
     </Routes>
     </>

@@ -28,8 +28,8 @@ Recettes Familiales is a family-recipe cookbook web app built with React 19, Typ
 
 - Recipe types live in `src/types/recipe.ts`; Zod schemas in `src/lib/recipeSchema.ts`.
 - The canonical difficulty enum is `"Facile" | "Medio" | "Difficile"` (from the source project). UI translates these via `difficulties.*` keys.
-- Canonical category names are Italian-derived (`Pasta`, `Antipasti`, `Dolci`, ...) and translated via `categories.*` keys.
-- Base recipe language is French; translations live under `translations.en` and `translations.it`.
+- Canonical category names are Italian-derived (`Pasta`, `Antipasti`, `Dolci`, ...) and translated via `categories.*` keys. This is a leftover of the source project's Italian theme — kept because the GitHub issue templates also use these tokens; treat them as opaque enum values.
+- Base recipe language is French; translations live under `translations.de`, `translations.en` and `translations.es`. UI languages match (fr is default).
 - All 5–15 tags per recipe are in French (canonical); they're translated via `tags.*` keys.
 
 ### Components

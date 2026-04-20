@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "recipes": "Rezepte",
+    "add": "Hinzufügen",
+    "contribute": "Mitmachen"
+  },
+  "home": {
+    "subtitle": "Rezepte von Oma, Opa, Mama, Papa, Freunden, aus dem Internet oder anderswo",
+    "title": "Guten Appetit",
+    "searchPlaceholder": "Rezept suchen..."
+  },
+  "contribute": {
+    "heroKicker": "EIN REZEPT HINZUFÜGEN",
+    "heroTitle": "So funktioniert es",
+    "intro": "Die Seite füllt sich von selbst: Du öffnest ein GitHub-Issue mit dem Rezept, Mistral AI formatiert es und erstellt einen Pull Request. Wenige Minuten später ist das Rezept online.",
+    "step1Title": "Schritt 1 — Neues Issue öffnen",
+    "step1Body": "Gehe in den Issues-Tab des GitHub-Repos und klicke auf « New issue ».",
+    "step1Cta": "Neues Issue öffnen",
+    "step2Title": "Schritt 2 — Vorlage wählen",
+    "step2Body": "Drei Vorlagen stehen zur Verfügung, je nachdem wie dein Rezept vorliegt.",
+    "templateFormTitle": "Strukturiertes Formular",
+    "templateFormDesc": "Du kennst das Rezept und kannst die Felder einzeln ausfüllen. Am schnellsten und zuverlässigsten.",
+    "templateFormLabel": "Rezept (Formular)",
+    "templateFileTitle": "Dateianhang",
+    "templateFileDesc": "Du hast ein Foto, einen Scan, ein PDF oder ein handgeschriebenes Bild. Mistral liest das Dokument und transkribiert es.",
+    "templateFileLabel": "Rezept (Datei)",
+    "templateUrlTitle": "Web-Link",
+    "templateUrlDesc": "Das Rezept ist auf einer Webseite. Füge den Link ein und Mistral holt es ab, bei Bedarf auch übersetzt.",
+    "templateUrlLabel": "Rezept (URL)",
+    "step3Title": "Schritt 3 — Formular ausfüllen",
+    "step3Body": "Hier ein ausgefülltes Beispiel pro Vorlage. Je detaillierter, desto besser der generierte PR.",
+    "exampleFormTitle": "Beispiel: strukturiertes Formular",
+    "exampleFileTitle": "Beispiel: Dateianhang",
+    "exampleUrlTitle": "Beispiel: Web-Link",
+    "step4Title": "Schritt 4 — Mistral arbeiten lassen",
+    "step4Body": "Sobald das Issue erstellt ist, startet eine GitHub Action. Mistral extrahiert das Rezept, generiert Tags, übersetzt es ins Englische und Spanische und öffnet einen Pull Request. Ein Kommentar mit dem PR-Link erscheint am Issue (~2 Minuten).",
+    "step5Title": "Schritt 5 — Prüfen und mergen",
+    "step5Body": "Öffne den PR, prüfe das generierte JSON, passe ggf. an und merge. Die Seite wird automatisch neu deployed und das Rezept ist online.",
+    "linksTitle": "Nützliche Links",
+    "linkRepo": "Das GitHub-Repo",
+    "linkIssues": "Die Issues",
+    "linkActions": "Die GitHub-Actions-Läufe",
+    "thanks": "Geforkt von",
+    "thanksDetail": "— der ursprüngliche Verdienst liegt bei ihm."
+  },
+  "recipes": {
+    "title": "Rezepte",
+    "description": "Rezepte von Oma, Opa, Mama, Papa, Freunden, aus dem Internet oder anderswo",
+    "noResults": "Der Topf ist leer!",
+    "noResultsHint": "Probiere andere Filter.",
+    "searchPlaceholder": "Rezepte suchen..."
+  },
+  "recipe": {
+    "notFound": "Rezept nicht gefunden",
+    "backToRecipes": "Zurück zu den Rezepten",
+    "back": "Zurück",
+    "prep": "Vorbereitung:",
+    "cook": "Kochzeit:",
+    "servings": "Portionen",
+    "ingredients": "Zutaten",
+    "instructions": "Zubereitung",
+    "tips": "Tipps",
+    "history": "Die Geschichte",
+    "source": "Quelle",
+    "difficulty": "Schwierigkeit",
+    "step": "Schritt {{number}}",
+    "print": "Rezept drucken",
+    "resetChecks": "Zurücksetzen",
+    "prev": "Zurück",
+    "prevStep": "Vorheriger Schritt",
+    "next": "Weiter",
+    "nextStep": "Nächster Schritt",
+    "stepOf": "Schritt {{current}} von {{total}}"
+  },
+  "filter": {
+    "title": "Rezepte filtern",
+    "category": "Kategorie",
+    "difficulty": "Schwierigkeit",
+    "time": "Gesamtzeit",
+    "prep": "Vorbereitungszeit",
+    "steps": "Anzahl der Schritte",
+    "ingredients": "Anzahl der Zutaten",
+    "diet": "Ernährung & Stil",
+    "season": "Saison & Anlass",
+    "origin": "Herkunft",
+    "clearAll": "Alle Filter zurücksetzen",
+    "openFilters": "Filter öffnen"
+  },
+  "origins": {
+    "famille": "Familienrezept",
+    "amis": "Von Freunden",
+    "grand-mere": "Oma",
+    "grand-pere": "Opa",
+    "internet": "Online gefunden",
+    "livre": "Kochbuch"
+  },
+  "stepsOptions": {
+    "simple": "✌️ ≤ 4 Schritte",
+    "medium": "👨‍🍳 5–7 Schritte",
+    "complex": "🎓 ≥ 8 Schritte"
+  },
+  "ingredientsOptions": {
+    "few": "🛒 ≤ 6 Zutaten",
+    "moderate": "🧺 7–11 Zutaten",
+    "many": "📦 ≥ 12 Zutaten"
+  },
+  "tags": {
+    "végétarien": "🌿 Vegetarisch",
+    "végétalien": "🌱 Vegan",
+    "vegan": "🌱 Vegan",
+    "sans-gluten": "🌾 Glutenfrei",
+    "sans-lactose": "🥛 Laktosefrei",
+    "léger": "🪶 Leicht",
+    "printemps": "🌸 Frühling",
+    "été": "☀️ Sommer",
+    "automne": "🍂 Herbst",
+    "hiver": "❄️ Winter",
+    "noël": "🎄 Weihnachten",
+    "pâques": "🐣 Ostern",
+    "apéro": "🥂 Aperitif",
+    "fête": "🎉 Fest"
+  },
+  "prepTimeOptions": {
+    "short": "🥗 ≤ 10 min",
+    "medium": "👨‍🍳 11–30 min",
+    "long": "⏳ > 30 min"
+  },
+  "timeOptions": {
+    "quick": "⚡ ≤ 20 min",
+    "medium": "🕐 21–45 min",
+    "long": "🍳 > 45 min"
+  },
+  "categories": {
+    "Antipasti": "Vorspeisen",
+    "Pasta": "Pasta",
+    "Gnocchi": "Gnocchi",
+    "Risotto": "Risotto",
+    "Insalate": "Salate",
+    "Secondi": "Hauptgerichte",
+    "Contorni": "Beilagen",
+    "Dolci": "Desserts",
+    "Pizze": "Pizza",
+    "Pane": "Brot",
+    "Bambini": "Für Kinder",
+    "Breakfast": "Frühstück",
+    "Brunch": "Brunch"
+  },
+  "difficulties": {
+    "Facile": "Einfach",
+    "Medio": "Mittel",
+    "Difficile": "Schwer"
+  }
+}

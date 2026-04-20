@@ -2,8 +2,9 @@ import { chatJson } from "./mistral.mjs"
 import { translationJsonSchema } from "./schema.mjs"
 
 const TARGET_LANGS = [
+  { code: "de", name: "German" },
   { code: "en", name: "English" },
-  { code: "it", name: "Italian" },
+  { code: "es", name: "Spanish" },
 ]
 
 export async function translateRecipe(recipe) {
