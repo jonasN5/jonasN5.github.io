@@ -4,7 +4,7 @@ Guidance for AI coding assistants (Mistral's Le Chat / Codestral / aider / Conti
 
 ## Project overview
 
-Recettes Familiales is a family-recipe cookbook web app built with React 19, TypeScript, Vite, and Tailwind CSS v4. It deploys to GitHub Pages at the `/recettes-familiales/` base path. Recipe data is static JSON served from `public/data/recipes/`. There is no runtime backend.
+Recettes Familiales is a family-recipe cookbook web app built with React 19, TypeScript, Vite, and Tailwind CSS v4. It deploys to GitHub Pages as the user site `https://jonasn5.github.io/` (repo: `jonasN5/jonasN5.github.io`, Vite `base: "/"`). Recipe data is static JSON served from `public/data/recipes/`. There is no runtime backend.
 
 ## Commands
 

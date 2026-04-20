@@ -2,7 +2,7 @@
   "name": "Recettes Familiales",
   "short_name": "Recettes",
   "description": "Les recettes de famille, rassemblées en un seul endroit.",
-  "start_url": "/recettes-familiales/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FAF9F6",
   "theme_color": "#DC2626",

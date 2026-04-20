@@ -143,7 +143,7 @@ export function Layout() {
           )
         })}
         <a
-          href="https://github.com/jonasN5/recettes-familiales/issues"
+          href="https://github.com/jonasN5/jonasN5.github.io/issues"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center text-outline px-5 py-1 hover:text-primary transition-colors"
