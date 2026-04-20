@@ -24,7 +24,7 @@ async function fetchPageText(url) {
   const response = await fetch(url, {
     headers: {
       "User-Agent":
-        "Mozilla/5.0 (compatible; RecettesFamilialesBot/1.0; +https://github.com/jonasN5/recettes-familiales)",
+        "Mozilla/5.0 (compatible; RecettesFamilialesBot/1.0; +https://github.com/jonasN5/jonasN5.github.io)",
     },
   })
   if (!response.ok) {
