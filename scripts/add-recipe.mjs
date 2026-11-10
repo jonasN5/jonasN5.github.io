@@ -9,6 +9,9 @@ import { writeRecipe } from "./lib/write-recipe.mjs"
 import { commentOnIssue, createPr, findOpenPr, pushBranch } from "./lib/github.mjs"
 
 const REPO_ROOT = resolve(process.cwd())
+// Hidden marker on the comment posted after each Mistral attempt. The workflow's
+// quota job counts these comments to enforce the daily limit.
+const ATTEMPT_MARKER = "\n\n<!-- recipe-intake-attempt -->"
 
 async function main() {
   const event = await readEvent()
@@ -59,14 +62,14 @@ async function main() {
 
     await commentOnIssue(
       issue.number,
-      `Nouvelle recette générée par Mistral AI : ${prUrl}\n\n- Catégorie : ${recipe.category}\n- Difficulté : ${recipe.difficulty}\n- ${recipe.steps.length} étapes, ${recipe.ingredients.reduce((n, g) => n + g.items.length, 0)} ingrédients\n- Traductions : français, allemand, anglais, espagnol`
+      `Nouvelle recette générée par Mistral AI : ${prUrl}\n\n- Catégorie : ${recipe.category}\n- Difficulté : ${recipe.difficulty}\n- ${recipe.steps.length} étapes, ${recipe.ingredients.reduce((n, g) => n + g.items.length, 0)} ingrédients\n- Traductions : français, allemand, anglais, espagnol` + ATTEMPT_MARKER
     )
     console.log(`Done: ${prUrl}`)
   } catch (err) {
     console.error(err)
     await commentOnIssue(
       issue.number,
-      `La génération automatique a échoué :\n\n\`\`\`\n${String(err.message || err).slice(0, 2000)}\n\`\`\`\n\nVérifiez les champs obligatoires du formulaire, puis ré-éditez l'issue pour relancer le workflow.`
+      `La génération automatique a échoué :\n\n\`\`\`\n${String(err.message || err).slice(0, 2000)}\n\`\`\`\n\nVérifiez les champs obligatoires du formulaire, puis ré-éditez l'issue pour relancer le workflow.` + ATTEMPT_MARKER
     )
     process.exitCode = 1
   }
