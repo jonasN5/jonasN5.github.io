@@ -2,8 +2,6 @@
 
 A warm, simple website to gather the recipes we've collected over the years — from grandparents, parents, friends, the internet or elsewhere. No ads, no popups, no accounts. Just the recipes. Bon appétit!
 
-Forked from [`PierrickMartos/Cucina-Mia`](https://github.com/PierrickMartos/Cucina-Mia) — all the initial credit goes to him.
-
 ## How it works
 
 New recipes are submitted through GitHub Issues using one of the three templates (structured form, file upload, URL). A GitHub Action picks up the issue, calls **Mistral AI** to extract the recipe, generate filter metadata and translate it into German, English and Spanish (with French as the source), then opens a pull request with the generated JSON.

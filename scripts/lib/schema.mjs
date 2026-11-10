@@ -1,20 +1,18 @@
 export const CATEGORY_OPTIONS = [
-  "Antipasti",
-  "Pasta",
-  "Gnocchi",
-  "Risotto",
-  "Insalate",
-  "Secondi",
-  "Contorni",
-  "Pizze",
-  "Pane",
-  "Dolci",
-  "Bambini",
-  "Breakfast",
+  "Entrées",
+  "Pâtes",
+  "Salades",
+  "Plats",
+  "Accompagnements",
+  "Pizzas",
+  "Pains",
+  "Desserts",
+  "Enfants",
+  "Petit-déjeuner",
   "Brunch",
 ]
 
-export const DIFFICULTY_OPTIONS = ["Facile", "Medio", "Difficile"]
+export const DIFFICULTY_OPTIONS = ["Facile", "Moyen", "Difficile"]
 
 export const baseRecipeJsonSchema = {
   type: "object",
@@ -38,7 +36,7 @@ export const baseRecipeJsonSchema = {
       maxItems: 15,
       items: { type: "string" },
       description:
-        "French tags (5-15). Cover as many dimensions as possible: diet (végétarien, vegan, sans-gluten), season (printemps, été, automne, hiver), time (rapide, long), mood (réconfortant, léger, festif), meal (plat-principal, dessert, entrée), cuisine (français, italien, asiatique), key ingredients (chocolat, poisson, volaille), practical (apéro, batch-cooking), etc.",
+        "French tags (5-15). Cover as many dimensions as possible: diet (végétarien, vegan, sans-gluten), season (printemps, été, automne, hiver), time (rapide, long), mood (réconfortant, léger, festif), meal (plat-principal, dessert, entrée), cuisine (français, asiatique, oriental), key ingredients (chocolat, poisson, volaille), practical (apéro, batch-cooking), etc.",
     },
     ingredients: {
       type: "array",

@@ -167,18 +167,6 @@ export function ContributePage() {
             </a>
           </li>
         </ul>
-        <p className="text-xs text-muted-foreground mt-8">
-          {t("contribute.thanks")}{" "}
-          <a
-            href="https://github.com/PierrickMartos/Cucina-Mia"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:underline"
-          >
-            PierrickMartos/Cucina-Mia
-          </a>{" "}
-          {t("contribute.thanksDetail")}
-        </p>
       </motion.section>
     </div>
   )

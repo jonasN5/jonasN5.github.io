@@ -12,40 +12,40 @@ function LocationDisplay() {
 
 const mockRecipes = [
   {
-    slug: "pasta-carbonara",
-    title: "Pasta alla Carbonara",
-    description: "La vera carbonara romana con guanciale.",
-    images: { cover: "images/recipes/pasta-carbonara/cover.svg", web: "images/recipes/pasta-carbonara/cover.svg" },
+    slug: "soupe-a-l-oignon",
+    title: "Soupe à l'oignon",
+    description: "La soupe gratinée des bistrots parisiens.",
+    images: { cover: "images/recipes/soupe-a-l-oignon/cover.svg", web: "images/recipes/soupe-a-l-oignon/cover.svg" },
     prepTime: 10,
     cookTime: 15,
     servings: 4,
-    difficulty: "Medio",
-    category: "Antipasti",
-    tags: ["pasta", "romano"],
+    difficulty: "Moyen",
+    category: "Entrées",
+    tags: ["soupe", "bistrot"],
   },
   {
-    slug: "tiramisu",
-    title: "Tiramisù Classico",
-    description: "Il dolce italiano più amato al mondo.",
-    images: { cover: "images/recipes/tiramisu/cover.svg", web: "images/recipes/tiramisu/cover.svg" },
+    slug: "tarte-tatin",
+    title: "Tarte Tatin",
+    description: "La tarte aux pommes caramélisée et renversée.",
+    images: { cover: "images/recipes/tarte-tatin/cover.svg", web: "images/recipes/tarte-tatin/cover.svg" },
     prepTime: 30,
     cookTime: 0,
     servings: 8,
     difficulty: "Facile",
-    category: "Dolci",
-    tags: ["dolce", "caffè"],
+    category: "Desserts",
+    tags: ["dessert", "pomme"],
   },
   {
-    slug: "pizza-margherita",
-    title: "Pizza Margherita",
-    description: "La pizza napoletana classica.",
-    images: { cover: "images/recipes/pizza-margherita/cover.svg", web: "images/recipes/pizza-margherita/cover.svg" },
+    slug: "flammekueche",
+    title: "Flammekueche",
+    description: "La tarte flambée alsacienne.",
+    images: { cover: "images/recipes/flammekueche/cover.svg", web: "images/recipes/flammekueche/cover.svg" },
     prepTime: 20,
     cookTime: 10,
     servings: 2,
-    difficulty: "Medio",
-    category: "Pizze",
-    tags: ["pizza", "napoletana"],
+    difficulty: "Moyen",
+    category: "Pizzas",
+    tags: ["tarte-flambee", "alsace"],
   },
 ]
 
@@ -92,9 +92,9 @@ describe("RecipesPage", () => {
   it("renders all recipes after loading", async () => {
     renderRecipesPage()
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
-      expect(screen.getByText("Tiramisù Classico")).toBeInTheDocument()
-      expect(screen.getByText("Pizza Margherita")).toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
+      expect(screen.getByText("Tarte Tatin")).toBeInTheDocument()
+      expect(screen.getByText("Flammekueche")).toBeInTheDocument()
     })
   })
 
@@ -102,70 +102,70 @@ describe("RecipesPage", () => {
     const user = userEvent.setup()
     renderRecipesPage()
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
     })
 
     const input = screen.getByPlaceholderText(/search/i)
     await user.clear(input)
-    await user.type(input, "carbonara")
+    await user.type(input, "oignon")
 
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
-      expect(screen.queryByText("Tiramisù Classico")).not.toBeInTheDocument()
-      expect(screen.queryByText("Pizza Margherita")).not.toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
+      expect(screen.queryByText("Tarte Tatin")).not.toBeInTheDocument()
+      expect(screen.queryByText("Flammekueche")).not.toBeInTheDocument()
     })
   })
 
   it("pre-filters by category from URL param", async () => {
-    renderRecipesPageWithCategory("Dolci")
+    renderRecipesPageWithCategory("Desserts")
     await waitFor(() => {
-      expect(screen.getByText("Tiramisù Classico")).toBeInTheDocument()
-      expect(screen.queryByText("Pasta alla Carbonara")).not.toBeInTheDocument()
-      expect(screen.queryByText("Pizza Margherita")).not.toBeInTheDocument()
+      expect(screen.getByText("Tarte Tatin")).toBeInTheDocument()
+      expect(screen.queryByText("Soupe à l'oignon")).not.toBeInTheDocument()
+      expect(screen.queryByText("Flammekueche")).not.toBeInTheDocument()
     })
   })
 
   it("pre-fills search from URL param", async () => {
-    renderRecipesPage("pizza")
+    renderRecipesPage("alsace")
     await waitFor(() => {
-      expect(screen.getByText("Pizza Margherita")).toBeInTheDocument()
-      expect(screen.queryByText("Pasta alla Carbonara")).not.toBeInTheDocument()
+      expect(screen.getByText("Flammekueche")).toBeInTheDocument()
+      expect(screen.queryByText("Soupe à l'oignon")).not.toBeInTheDocument()
     })
-    expect(screen.getByDisplayValue("pizza")).toBeInTheDocument()
+    expect(screen.getByDisplayValue("alsace")).toBeInTheDocument()
   })
 
   it("pre-filters by tag from URL param", async () => {
-    renderRecipesPageWithTag("pasta")
+    renderRecipesPageWithTag("soupe")
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
-      expect(screen.queryByText("Tiramisù Classico")).not.toBeInTheDocument()
-      expect(screen.queryByText("Pizza Margherita")).not.toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
+      expect(screen.queryByText("Tarte Tatin")).not.toBeInTheDocument()
+      expect(screen.queryByText("Flammekueche")).not.toBeInTheDocument()
     })
   })
 
   it("shows active tag chip when tag param is present", async () => {
-    renderRecipesPageWithTag("dolce")
+    renderRecipesPageWithTag("dessert")
     await waitFor(() => {
-      expect(screen.getByText("dolce")).toBeInTheDocument()
+      expect(screen.getByText("dessert")).toBeInTheDocument()
     })
   })
 
   it("clears tag filter and removes tag from URL when chip X is clicked", async () => {
     const user = userEvent.setup()
-    renderRecipesPageWithTag("pasta")
+    renderRecipesPageWithTag("soupe")
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
     })
-    expect(screen.getByTestId("location").textContent).toContain("tag=pasta")
+    expect(screen.getByTestId("location").textContent).toContain("tag=soupe")
 
     // Click the X on the tag chip
-    const chip = screen.getByText("pasta").closest("button")!
+    const chip = screen.getByText("soupe").closest("button")!
     await user.click(chip)
 
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
-      expect(screen.getByText("Tiramisù Classico")).toBeInTheDocument()
-      expect(screen.getByText("Pizza Margherita")).toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
+      expect(screen.getByText("Tarte Tatin")).toBeInTheDocument()
+      expect(screen.getByText("Flammekueche")).toBeInTheDocument()
     })
     expect(screen.queryByText("Tag:")).not.toBeInTheDocument()
     expect(screen.getByTestId("location").textContent).not.toContain("tag=")
@@ -175,7 +175,7 @@ describe("RecipesPage", () => {
     const user = userEvent.setup()
     renderRecipesPage()
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
     })
 
     const input = screen.getByPlaceholderText(/search/i)

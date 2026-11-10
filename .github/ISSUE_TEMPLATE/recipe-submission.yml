@@ -35,15 +35,15 @@ body:
     attributes:
       label: Catégorie
       options:
-        - Antipasti
-        - Pasta
-        - Secondi
-        - Insalate
-        - Pizze
-        - Pane
-        - Dolci
-        - Bambini
-        - Breakfast
+        - Entrées
+        - Pâtes
+        - Plats
+        - Salades
+        - Pizzas
+        - Pains
+        - Desserts
+        - Enfants
+        - Petit-déjeuner
         - Brunch
     validations:
       required: true
@@ -54,7 +54,7 @@ body:
       label: Difficulté
       options:
         - Facile
-        - Medio
+        - Moyen
         - Difficile
     validations:
       required: true

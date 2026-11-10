@@ -40,9 +40,7 @@
     "linksTitle": "Enlaces útiles",
     "linkRepo": "El repositorio de GitHub",
     "linkIssues": "Las issues",
-    "linkActions": "Las ejecuciones de GitHub Actions",
-    "thanks": "Forkeado de",
-    "thanksDetail": "— todo el mérito inicial es suyo."
+    "linkActions": "Las ejecuciones de GitHub Actions"
   },
   "recipes": {
     "title": "Recetas",
@@ -132,23 +130,21 @@
     "long": "🍳 > 45 min"
   },
   "categories": {
-    "Antipasti": "Entrantes",
-    "Pasta": "Pasta",
-    "Gnocchi": "Gnocchi",
-    "Risotto": "Risotto",
-    "Insalate": "Ensaladas",
-    "Secondi": "Platos principales",
-    "Contorni": "Guarniciones",
-    "Dolci": "Postres",
-    "Pizze": "Pizzas",
-    "Pane": "Panes",
-    "Bambini": "Niños",
-    "Breakfast": "Desayuno",
+    "Entrées": "Entrantes",
+    "Pâtes": "Pasta",
+    "Salades": "Ensaladas",
+    "Plats": "Platos principales",
+    "Accompagnements": "Guarniciones",
+    "Desserts": "Postres",
+    "Pizzas": "Pizzas",
+    "Pains": "Panes",
+    "Enfants": "Niños",
+    "Petit-déjeuner": "Desayuno",
     "Brunch": "Brunch"
   },
   "difficulties": {
     "Facile": "Fácil",
-    "Medio": "Medio",
+    "Moyen": "Medio",
     "Difficile": "Difícil"
   }
 }

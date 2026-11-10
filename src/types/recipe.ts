@@ -36,7 +36,7 @@ export interface RecipeSummary {
   prepTime: number
   cookTime: number
   servings: number
-  difficulty: "Facile" | "Medio" | "Difficile"
+  difficulty: "Facile" | "Moyen" | "Difficile"
   category: string
   tags: string[]
   origin?: RecipeOrigin

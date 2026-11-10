@@ -78,7 +78,7 @@ export async function extractStructured(issue) {
     cookTime: Number.parseInt(fields.cookTime ?? "0", 10) || 0,
     servings: Number.parseInt(fields.servings ?? "1", 10) || 1,
     difficulty: fields.difficulty || "Facile",
-    category: fields.category || "Secondi",
+    category: fields.category || "Plats",
     tags: parseTags(fields.tags || ""),
     ingredients: parseIngredients(fields.ingredients || ""),
     steps: parseSteps(fields.steps || ""),

@@ -6,19 +6,19 @@ import i18n from "i18next"
 import { RecipePage } from "@/pages/RecipePage"
 
 const mockRecipe = {
-  slug: "pasta-carbonara",
-  title: "Pasta alla Carbonara",
-  description: "La vera carbonara romana.",
-  images: { cover: "images/recipes/pasta-carbonara/cover.svg", web: "images/recipes/pasta-carbonara/cover.svg" },
+  slug: "soupe-a-l-oignon",
+  title: "Soupe à l'oignon",
+  description: "La soupe gratinée des bistrots parisiens.",
+  images: { cover: "images/recipes/soupe-a-l-oignon/cover.svg", web: "images/recipes/soupe-a-l-oignon/cover.svg" },
   prepTime: 10,
   cookTime: 15,
   servings: 4,
-  difficulty: "Medio",
-  category: "Primi",
-  tags: ["pasta", "romano"],
-  ingredients: [{ items: ["400g spaghetti", "200g guanciale"] }],
-  steps: [{ text: "Portare a ebollizione l'acqua." }, { text: "Rosolare il guanciale." }],
-  tips: ["Usare solo pecorino romano."],
+  difficulty: "Moyen",
+  category: "Entrées",
+  tags: ["soupe", "bistrot"],
+  ingredients: [{ items: ["6 oignons", "1 l de bouillon"] }],
+  steps: [{ text: "Émincer les oignons." }, { text: "Faire revenir les oignons." }],
+  tips: ["Utiliser du comté bien affiné."],
 }
 
 function renderRecipePage(slug: string) {
@@ -43,14 +43,14 @@ describe("RecipePage", () => {
   })
 
   it("renders recipe title in hero card", async () => {
-    renderRecipePage("pasta-carbonara")
+    renderRecipePage("soupe-a-l-oignon")
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
     })
   })
 
   it("renders prep and cook times", async () => {
-    renderRecipePage("pasta-carbonara")
+    renderRecipePage("soupe-a-l-oignon")
     await waitFor(() => {
       expect(screen.getByText(/Prep:/)).toBeInTheDocument()
       expect(screen.getByText("10 min")).toBeInTheDocument()
@@ -61,28 +61,28 @@ describe("RecipePage", () => {
 
   it("shows ingredients tab by default with checkable items", async () => {
     const user = userEvent.setup()
-    renderRecipePage("pasta-carbonara")
+    renderRecipePage("soupe-a-l-oignon")
     await waitFor(() => {
-      expect(screen.getAllByText("400g spaghetti")[0]).toBeInTheDocument()
-      expect(screen.getAllByText("200g guanciale")[0]).toBeInTheDocument()
+      expect(screen.getAllByText("6 oignons")[0]).toBeInTheDocument()
+      expect(screen.getAllByText("1 l de bouillon")[0]).toBeInTheDocument()
     })
 
     // Click label to check an ingredient (first occurrence = mobile section)
-    const label = screen.getAllByText("400g spaghetti")[0].closest("label")!
+    const label = screen.getAllByText("6 oignons")[0].closest("label")!
     await user.click(label)
-    expect(screen.getAllByText("400g spaghetti")[0]).toHaveClass("line-through")
+    expect(screen.getAllByText("6 oignons")[0]).toHaveClass("line-through")
   })
 
   it("switches to instructions tab", async () => {
     const user = userEvent.setup()
-    renderRecipePage("pasta-carbonara")
+    renderRecipePage("soupe-a-l-oignon")
     await waitFor(() => {
-      expect(screen.getAllByText("400g spaghetti")[0]).toBeInTheDocument()
+      expect(screen.getAllByText("6 oignons")[0]).toBeInTheDocument()
     })
 
     await user.click(screen.getByRole("button", { name: "Instructions" }))
-    expect(screen.getAllByText("Portare a ebollizione l'acqua.")[0]).toBeInTheDocument()
-    expect(screen.getAllByText("Rosolare il guanciale.")[0]).toBeInTheDocument()
+    expect(screen.getAllByText("Émincer les oignons.")[0]).toBeInTheDocument()
+    expect(screen.getAllByText("Faire revenir les oignons.")[0]).toBeInTheDocument()
   })
 
   it("shows not found for missing recipe", async () => {
@@ -96,31 +96,31 @@ describe("RecipePage", () => {
   })
 
   it("renders tips section", async () => {
-    renderRecipePage("pasta-carbonara")
+    renderRecipePage("soupe-a-l-oignon")
     await waitFor(() => {
-      expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
+      expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
     })
-    expect(screen.getByText("Usare solo pecorino romano.")).toBeInTheDocument()
+    expect(screen.getByText("Utiliser du comté bien affiné.")).toBeInTheDocument()
   })
 
   it("renders tags as links to /recipes?tag=<tag>", async () => {
-    renderRecipePage("pasta-carbonara")
+    renderRecipePage("soupe-a-l-oignon")
     await waitFor(() => {
-      expect(screen.getByText("pasta")).toBeInTheDocument()
+      expect(screen.getByText("soupe")).toBeInTheDocument()
     })
-    const pastaLink = screen.getByText("pasta").closest("a")!
-    expect(pastaLink).toHaveAttribute("href", "/recipes?tag=pasta")
-    const romanoLink = screen.getByText("romano").closest("a")!
-    expect(romanoLink).toHaveAttribute("href", "/recipes?tag=romano")
+    const soupeLink = screen.getByText("soupe").closest("a")!
+    expect(soupeLink).toHaveAttribute("href", "/recipes?tag=soupe")
+    const bistrotLink = screen.getByText("bistrot").closest("a")!
+    expect(bistrotLink).toHaveAttribute("href", "/recipes?tag=bistrot")
   })
 
   it("navigates to recipes page filtered by tag when tag is clicked", async () => {
     const user = userEvent.setup()
-    renderRecipePage("pasta-carbonara")
+    renderRecipePage("soupe-a-l-oignon")
     await waitFor(() => {
-      expect(screen.getByText("pasta")).toBeInTheDocument()
+      expect(screen.getByText("soupe")).toBeInTheDocument()
     })
-    await user.click(screen.getByText("pasta").closest("a")!)
+    await user.click(screen.getByText("soupe").closest("a")!)
     await waitFor(() => {
       expect(screen.getByTestId("recipes-page")).toBeInTheDocument()
     })
