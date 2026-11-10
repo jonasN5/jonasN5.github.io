@@ -1,8 +1,5 @@
 import { readFile } from "node:fs/promises"
 import { resolve } from "node:path"
-import { extractStructured } from "./lib/extract-structured.mjs"
-import { extractFromUrl } from "./lib/extract-url.mjs"
-import { extractFromFile } from "./lib/extract-file.mjs"
 import { extractFromText } from "./lib/extract-text.mjs"
 import { downloadIssueCover } from "./lib/cover-upload.mjs"
 import { translateRecipe } from "./lib/translate.mjs"
@@ -29,15 +26,8 @@ async function main() {
   }
 
   try {
-    const template = detectTemplate(labels, issue.body || "")
-    console.log(`Detected template: ${template}`)
-
-    let recipe
-    if (template === "text") recipe = await extractFromText(issue)
-    else if (template === "structured") recipe = await extractStructured(issue)
-    else if (template === "url") recipe = await extractFromUrl(issue)
-    else if (template === "file") recipe = await extractFromFile(issue)
-    else throw new Error(`Unsupported template: ${template}`)
+    // Single issue form: .github/ISSUE_TEMPLATE/recette.yml (pasted text + optional photo).
+    const recipe = await extractFromText(issue)
 
     validateRecipeShape(recipe)
 
@@ -91,16 +81,6 @@ async function readEvent() {
   if (!path) throw new Error("GITHUB_EVENT_PATH is not set")
   const raw = await readFile(path, "utf-8")
   return JSON.parse(raw)
-}
-
-function detectTemplate(labels, body) {
-  if (body.includes("### Texte de la recette")) return "text"
-  if (body.includes("### URL de la recette")) return "url"
-  if (body.includes("### Fichier de la recette")) return "file"
-  if (labels.includes("needs-formatting")) {
-    return body.includes("### Fichier") ? "file" : "url"
-  }
-  return "structured"
 }
 
 function describeCover(cover, coverError) {

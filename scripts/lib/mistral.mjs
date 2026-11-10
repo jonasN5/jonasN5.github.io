@@ -6,7 +6,6 @@ if (!apiKey) {
 }
 
 export const MODEL_TEXT = process.env.MISTRAL_MODEL_TEXT || "mistral-small-latest"
-export const MODEL_VISION = process.env.MISTRAL_MODEL_VISION || "pixtral-12b-2409"
 
 const client = new Mistral({ apiKey })
 
@@ -66,29 +65,4 @@ export async function chatJson({
     }
   }
   throw new Error(`Mistral call failed: ${lastError?.message ?? lastError}`)
-}
-
-export async function chatVisionJson({ system, user, imageUrls, schema, schemaName = "Result" }) {
-  const messages = [
-    { role: "system", content: system },
-    {
-      role: "user",
-      content: [
-        { type: "text", text: user },
-        ...imageUrls.map((url) => ({ type: "image_url", imageUrl: url })),
-      ],
-    },
-  ]
-  const response = await client.chat.complete({
-    model: MODEL_VISION,
-    messages,
-    responseFormat: {
-      type: "json_schema",
-      jsonSchema: { name: schemaName, strict: true, schemaDefinition: schema },
-    },
-    temperature: 0.2,
-  })
-  const content = response.choices?.[0]?.message?.content
-  if (typeof content !== "string") throw new Error("Empty Mistral vision response")
-  return JSON.parse(content)
 }

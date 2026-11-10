@@ -48,7 +48,7 @@ Recettes Familiales is a family-recipe cookbook web app built with React 19, Typ
 `.github/workflows/add-recipe-mistral.yml` listens to `issues: [opened, labeled, edited]`. When an issue is labelled `recipe-submission`, it runs `node scripts/add-recipe.mjs`, which:
 
 1. Reads the issue payload from `$GITHUB_EVENT_PATH`.
-2. Dispatches on the issue-form headings: pasted text (`recette.yml`, the main template), file upload (attached image/PDF), URL paste, or the structured form.
+2. Parses the single issue form, « Recette (texte) » (`.github/ISSUE_TEMPLATE/recette.yml`): the pasted text goes to Mistral (`scripts/lib/extract-text.mjs`), the optional photo becomes the cover.
 3. Calls Mistral AI via the `@mistralai/mistralai` SDK with a strict JSON schema matching `RecipeDetailSchema`.
 4. Generates DE, EN and ES translations (one Mistral call per language).
 5. Writes `public/data/recipes/{slug}.json`, updates `index.json`, and sets the cover: the photo attached to the issue ("Photo du plat" field, GitHub-hosted uploads only, see `scripts/lib/cover-upload.mjs`), else Unsplash if `UNSPLASH_ACCESS_KEY` is set, else a placeholder.
@@ -57,7 +57,6 @@ Recettes Familiales is a family-recipe cookbook web app built with React 19, Typ
 Per-model choices (configurable via env vars on the workflow):
 
 - `MISTRAL_MODEL_TEXT` — default `mistral-small-latest` (structured extraction, translation)
-- `MISTRAL_MODEL_VISION` — default `pixtral-12b-2409` (image submissions)
 
 Secrets required: `MISTRAL_API_KEY`. Optional: `UNSPLASH_ACCESS_KEY`.
 

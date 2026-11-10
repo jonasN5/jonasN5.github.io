@@ -2,8 +2,8 @@ import { mkdir, writeFile } from "node:fs/promises"
 import { dirname, join } from "node:path"
 import { parseIssueSections } from "./issue-form.mjs"
 
-// Issue-form fields where submitters can drop a photo of the finished dish.
-const COVER_HEADINGS = ["Photo du plat (optionnel)", "Image de couverture (optionnel)"]
+// Issue-form field where submitters can drop a photo of the finished dish.
+const COVER_HEADINGS = ["Photo du plat (optionnel)"]
 
 // Only download files GitHub itself hosts (drag-and-drop uploads), never arbitrary URLs.
 const ALLOWED_PREFIXES = [

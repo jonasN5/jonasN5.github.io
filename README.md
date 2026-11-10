@@ -4,7 +4,7 @@ A warm, simple website to gather the recipes we've collected over the years — 
 
 ## How it works
 
-New recipes are submitted through GitHub Issues. The main template, **Recette (texte)**, has just two fields: paste the recipe text, and optionally drop in a photo of the dish (used as the cover image). File, URL and structured-form templates remain available as alternatives. A GitHub Action picks up the issue, calls **Mistral AI** to extract the recipe, generate filter metadata and translate it into German, English and Spanish (with French as the source), then opens a pull request with the generated JSON.
+New recipes are submitted through a single GitHub issue form, **Recette (texte)**, with just two fields: paste the recipe text, and optionally drop in a photo of the dish (used as the cover image). A GitHub Action picks up the issue, calls **Mistral AI** to extract the recipe, generate filter metadata and translate it into German, English and Spanish (with French as the source), then opens a pull request with the generated JSON.
 
 <details>
 <summary>Tech details</summary>

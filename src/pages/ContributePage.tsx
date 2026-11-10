@@ -2,10 +2,7 @@ import { useTranslation } from "react-i18next"
 import {
   ArrowRight,
   ClipboardPaste,
-  Image as ImageIcon,
-  Link as LinkIcon,
   ExternalLink,
-  ListChecks,
   GitPullRequest,
   Sparkles,
 } from "lucide-react"
@@ -14,7 +11,6 @@ import { motion, useReducedMotion } from "motion/react"
 const REPO_URL = "https://github.com/jonasN5/jonasN5.github.io"
 // Opens the "Recette (texte)" form directly (.github/ISSUE_TEMPLATE/recette.yml).
 const NEW_RECIPE_URL = `${REPO_URL}/issues/new?template=recette.yml`
-const TEMPLATE_PICKER_URL = `${REPO_URL}/issues/new/choose`
 const ACTIONS_URL = `${REPO_URL}/actions`
 const ISSUES_URL = `${REPO_URL}/issues`
 
@@ -90,48 +86,6 @@ export function ContributePage() {
       />
 
       <motion.section
-        className="px-6 sm:px-10 pt-12 max-w-3xl lg:max-w-5xl mx-auto"
-        initial={fadeUp}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        <h2 className="font-headline text-xl font-bold text-primary tracking-[-0.02em] mb-2">
-          {t("contribute.otherTitle")}
-        </h2>
-        <p className="text-sm text-foreground/80 leading-relaxed mb-4">{t("contribute.otherBody")}</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          <TemplateCard
-            icon={<ImageIcon className="h-5 w-5" />}
-            label={t("contribute.templateFileLabel")}
-            title={t("contribute.templateFileTitle")}
-            description={t("contribute.templateFileDesc")}
-          />
-          <TemplateCard
-            icon={<LinkIcon className="h-5 w-5" />}
-            label={t("contribute.templateUrlLabel")}
-            title={t("contribute.templateUrlTitle")}
-            description={t("contribute.templateUrlDesc")}
-          />
-          <TemplateCard
-            icon={<ListChecks className="h-5 w-5" />}
-            label={t("contribute.templateFormLabel")}
-            title={t("contribute.templateFormTitle")}
-            description={t("contribute.templateFormDesc")}
-          />
-        </div>
-        <a
-          href={TEMPLATE_PICKER_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-primary font-semibold hover:underline"
-        >
-          {t("contribute.otherCta")}
-          <ArrowRight className="h-3.5 w-3.5" />
-        </a>
-      </motion.section>
-
-      <motion.section
         className="px-6 sm:px-10 pt-10 max-w-3xl lg:max-w-5xl mx-auto"
         initial={fadeUp}
         whileInView={{ opacity: 1, y: 0 }}
@@ -195,28 +149,5 @@ function Step({ number, title, body, children, icon, fadeUp }: StepProps) {
       </div>
       {children && <div>{children}</div>}
     </motion.section>
-  )
-}
-
-function TemplateCard({
-  icon,
-  label,
-  title,
-  description,
-}: {
-  icon: React.ReactNode
-  label: string
-  title: string
-  description: string
-}) {
-  return (
-    <article className="bg-surface-high rounded-2xl p-5 flex flex-col gap-2 border border-outline/10">
-      <div className="flex items-center gap-2 text-primary">
-        {icon}
-        <span className="text-[10px] uppercase tracking-widest font-semibold">{label}</span>
-      </div>
-      <h3 className="font-headline text-lg font-bold text-foreground tracking-[-0.02em]">{title}</h3>
-      <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
-    </article>
   )
 }
