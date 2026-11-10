@@ -130,23 +130,21 @@
     "long": "🍳 > 45 min"
   },
   "categories": {
-    "Antipasti": "Vorspeisen",
-    "Pasta": "Pasta",
-    "Gnocchi": "Gnocchi",
-    "Risotto": "Risotto",
-    "Insalate": "Salate",
-    "Secondi": "Hauptgerichte",
-    "Contorni": "Beilagen",
-    "Dolci": "Desserts",
-    "Pizze": "Pizza",
-    "Pane": "Brot",
-    "Bambini": "Für Kinder",
-    "Breakfast": "Frühstück",
+    "Entrées": "Vorspeisen",
+    "Pâtes": "Pasta",
+    "Salades": "Salate",
+    "Plats": "Hauptgerichte",
+    "Accompagnements": "Beilagen",
+    "Desserts": "Desserts",
+    "Pizzas": "Pizza",
+    "Pains": "Brot",
+    "Enfants": "Für Kinder",
+    "Petit-déjeuner": "Frühstück",
     "Brunch": "Brunch"
   },
   "difficulties": {
     "Facile": "Einfach",
-    "Medio": "Mittel",
+    "Moyen": "Mittel",
     "Difficile": "Schwer"
   }
 }

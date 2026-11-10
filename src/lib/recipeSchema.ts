@@ -41,7 +41,7 @@ export const RecipeSummarySchema = z.object({
   prepTime: z.number().int().nonnegative(),
   cookTime: z.number().int().nonnegative(),
   servings: z.number().int().positive(),
-  difficulty: z.enum(["Facile", "Medio", "Difficile"]),
+  difficulty: z.enum(["Facile", "Moyen", "Difficile"]),
   category: z.string().min(1),
   tags: z.array(z.string()).min(1),
   stepCount: z.number().int().nonnegative().optional(),

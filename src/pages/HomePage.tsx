@@ -12,17 +12,15 @@ import type { RecipeSummary } from "@/types/recipe"
 const BASE = import.meta.env.BASE_URL
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  Antipasti: "images/categories/antipasti.jpg",
-  Pasta: "images/categories/pasta.jpg",
-  Gnocchi: "images/categories/gnocchi.jpg",
-  Risotto: "images/categories/risotto.jpg",
-  Insalate: "images/categories/insalate.jpg",
-  Secondi: "images/categories/secondi.jpg",
-  Pizze: "images/categories/pizza.jpg",
-  Pane: "images/categories/focacia.jpg",
-  Dolci: "images/categories/dolci.jpg",
-  Bambini: "images/categories/bambini.jpg",
-  Breakfast: "images/categories/breakfast.jpg",
+  "Entrées": "images/categories/entrees.jpg",
+  "Pâtes": "images/categories/pates.jpg",
+  Salades: "images/categories/salades.jpg",
+  Plats: "images/categories/plats.jpg",
+  Pizzas: "images/categories/pizzas.jpg",
+  Pains: "images/categories/pains.jpg",
+  Desserts: "images/categories/desserts.jpg",
+  Enfants: "images/categories/enfants.jpg",
+  "Petit-déjeuner": "images/categories/petit-dejeuner.jpg",
   Brunch: "images/categories/brunch.jpg",
 }
 

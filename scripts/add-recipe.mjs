@@ -38,7 +38,7 @@ async function main() {
 
     validateRecipeShape(recipe)
 
-    console.log("Translating into EN and IT...")
+    console.log("Translating into DE, EN and ES...")
     const translations = await translateRecipe(recipe)
 
     console.log("Fetching cover image...")

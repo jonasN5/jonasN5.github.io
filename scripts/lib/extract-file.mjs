@@ -75,7 +75,7 @@ async function extractFromImages(imageUrls, fields) {
     system:
       "You transcribe a recipe from a photo or scan and output French-language JSON. " +
       "All text fields must be in French, translating if needed. Tags are 5-12 French lowercase hyphenated words. " +
-      "Slug must be URL-safe (lowercase ASCII, digits, hyphens). Difficulty is Facile, Medio or Difficile. " +
+      "Slug must be URL-safe (lowercase ASCII, digits, hyphens). Difficulty is Facile, Moyen or Difficile. " +
       "Use an empty string or empty array for fields not visible in the image.",
     user: `Recipe title hint: ${fields.title}\nUser notes: ${fields.notes || "(none)"}\n\nTranscribe this recipe precisely, preserving quantities and units.`,
     imageUrls,
@@ -91,7 +91,7 @@ async function extractFromText(text, fields) {
       "You extract a recipe from text pasted by a user and output French-language JSON. " +
       "All free-text fields (title, description, ingredients, steps, tips, history) must be in French, translating if needed. " +
       "Preserve quantities and units exactly. The slug must be URL-safe (lowercase ASCII, digits, hyphens). " +
-      "Tags are 5-12 French lowercase hyphenated words. Difficulty is Facile, Medio or Difficile. " +
+      "Tags are 5-12 French lowercase hyphenated words. Difficulty is Facile, Moyen or Difficile. " +
       "If a field is not in the source, use an empty string or empty array.",
     user: `Recipe title hint: ${fields.title}\nUser notes: ${fields.notes || "(none)"}\n\nRecipe text:\n${text.slice(0, 40000)}`,
     schema: baseRecipeJsonSchema,
@@ -105,7 +105,7 @@ async function extractFromPdf(pdfUrl, fields) {
     system:
       "You extract a recipe from a PDF document available at the given URL. " +
       "Output French-language JSON. Tags are 5-12 French lowercase hyphenated words. " +
-      "Slug must be URL-safe. Difficulty is Facile, Medio or Difficile. " +
+      "Slug must be URL-safe. Difficulty is Facile, Moyen or Difficile. " +
       "If you cannot access the PDF, reply with an empty recipe (title '', steps: []) — a follow-up workflow will surface the error.",
     user: `Recipe title hint: ${fields.title}\nUser notes: ${fields.notes || "(none)"}\n\nPDF URL: ${pdfUrl}`,
     schema: baseRecipeJsonSchema,
