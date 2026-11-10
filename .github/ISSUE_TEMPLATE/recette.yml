@@ -1,0 +1,29 @@
+name: "Recette (texte) — le plus simple"
+description: "Collez le texte de la recette, ajoutez une photo du plat si vous en avez une. Mistral AI s'occupe du reste."
+title: "[Recette] "
+labels: ["recipe-submission"]
+body:
+  - type: textarea
+    id: text
+    attributes:
+      label: Texte de la recette
+      description: "Collez la recette telle quelle : titre, ingrédients, étapes… La mise en forme n'a pas d'importance."
+      placeholder: |
+        Tarte aux pommes de mamie
+
+        Pour 6 personnes
+        - 1 pâte brisée
+        - 4 pommes
+        - 50 g de sucre
+
+        1. Préchauffer le four à 180 °C.
+        2. …
+    validations:
+      required: true
+
+  - type: textarea
+    id: cover_image
+    attributes:
+      label: Photo du plat (optionnel)
+      description: "Glissez-déposez ou collez une photo du plat terminé. Elle servira d'image de couverture."
+      placeholder: "Déposer une photo ici"

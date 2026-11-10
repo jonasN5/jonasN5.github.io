@@ -1,5 +1,6 @@
 import { chatJson, chatVisionJson } from "./mistral.mjs"
 import { baseRecipeJsonSchema, stripEmpty } from "./schema.mjs"
+import { extractRecipeFromText } from "./extract-text.mjs"
 
 const FIELD_MAP = {
   "Nom de la recette": "title",
@@ -28,6 +29,11 @@ function extractAttachmentUrls(field) {
   while ((match = imageRegex.exec(field)) !== null) {
     urls.push({ url: match[1], kind: "image" })
   }
+  // GitHub now inserts dropped images as <img src="https://github.com/user-attachments/assets/...">.
+  const htmlImageRegex = /<img\b[^>]*\bsrc=["'](https:\/\/[^"']+)["']/gi
+  while ((match = htmlImageRegex.exec(field)) !== null) {
+    if (!urls.some((u) => u.url === match[1])) urls.push({ url: match[1], kind: "image" })
+  }
   while ((match = linkRegex.exec(field)) !== null) {
     const url = match[2]
     if (!urls.some((u) => u.url === url)) {
@@ -46,7 +52,9 @@ export async function extractFromFile(issue) {
   const attachments = extractAttachmentUrls(fields.file)
   if (!attachments.length) {
     // The recipe was pasted as plain text instead of attached as a file.
-    if (fields.file.length >= 80) return await extractFromText(fields.file, fields)
+    if (fields.file.length >= 80) {
+      return await extractRecipeFromText(fields.file, { titleHint: fields.title, notes: fields.notes })
+    }
     throw new Error(
       "No file attachment found. GitHub's attachment uploader sometimes takes a moment — re-edit the issue after the upload completes."
     )
@@ -79,21 +87,6 @@ async function extractFromImages(imageUrls, fields) {
       "Use an empty string or empty array for fields not visible in the image.",
     user: `Recipe title hint: ${fields.title}\nUser notes: ${fields.notes || "(none)"}\n\nTranscribe this recipe precisely, preserving quantities and units.`,
     imageUrls,
-    schema: baseRecipeJsonSchema,
-    schemaName: "Recipe",
-  })
-  return stripEmpty(recipe)
-}
-
-async function extractFromText(text, fields) {
-  const recipe = await chatJson({
-    system:
-      "You extract a recipe from text pasted by a user and output French-language JSON. " +
-      "All free-text fields (title, description, ingredients, steps, tips, history) must be in French, translating if needed. " +
-      "Preserve quantities and units exactly. The slug must be URL-safe (lowercase ASCII, digits, hyphens). " +
-      "Tags are 5-12 French lowercase hyphenated words. Difficulty is Facile, Moyen or Difficile. " +
-      "If a field is not in the source, use an empty string or empty array.",
-    user: `Recipe title hint: ${fields.title}\nUser notes: ${fields.notes || "(none)"}\n\nRecipe text:\n${text.slice(0, 40000)}`,
     schema: baseRecipeJsonSchema,
     schemaName: "Recipe",
   })

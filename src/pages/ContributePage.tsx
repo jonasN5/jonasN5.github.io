@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next"
 import {
   ArrowRight,
+  ClipboardPaste,
   Image as ImageIcon,
   Link as LinkIcon,
   ExternalLink,
@@ -10,9 +11,10 @@ import {
 } from "lucide-react"
 import { motion, useReducedMotion } from "motion/react"
 
-const BASE = import.meta.env.BASE_URL
 const REPO_URL = "https://github.com/jonasN5/jonasN5.github.io"
-const NEW_ISSUE_URL = `${REPO_URL}/issues/new/choose`
+// Opens the "Recette (texte)" form directly (.github/ISSUE_TEMPLATE/recette.yml).
+const NEW_RECIPE_URL = `${REPO_URL}/issues/new?template=recette.yml`
+const TEMPLATE_PICKER_URL = `${REPO_URL}/issues/new/choose`
 const ACTIONS_URL = `${REPO_URL}/actions`
 const ISSUES_URL = `${REPO_URL}/issues`
 
@@ -42,19 +44,15 @@ export function ContributePage() {
         fadeUp={fadeUp}
       >
         <a
-          href={NEW_ISSUE_URL}
+          href={NEW_RECIPE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 gradient-primary text-primary-foreground rounded-full px-5 py-2.5 text-sm font-semibold hover:opacity-90 transition-opacity mb-5"
+          className="inline-flex items-center gap-2 gradient-primary text-primary-foreground rounded-full px-5 py-2.5 text-sm font-semibold hover:opacity-90 transition-opacity"
         >
           <ExternalLink className="h-4 w-4" />
           {t("contribute.step1Cta")}
           <ArrowRight className="h-4 w-4" />
         </a>
-        <Screenshot
-          src={`${BASE}images/contribute/01-issues-tab.png`}
-          alt="GitHub Issues tab with the New issue button highlighted"
-        />
       </Step>
 
       <Step
@@ -62,62 +60,13 @@ export function ContributePage() {
         title={t("contribute.step2Title")}
         body={t("contribute.step2Body")}
         fadeUp={fadeUp}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
-          <TemplateCard
-            icon={<ListChecks className="h-5 w-5" />}
-            label={t("contribute.templateFormLabel")}
-            title={t("contribute.templateFormTitle")}
-            description={t("contribute.templateFormDesc")}
-          />
-          <TemplateCard
-            icon={<ImageIcon className="h-5 w-5" />}
-            label={t("contribute.templateFileLabel")}
-            title={t("contribute.templateFileTitle")}
-            description={t("contribute.templateFileDesc")}
-          />
-          <TemplateCard
-            icon={<LinkIcon className="h-5 w-5" />}
-            label={t("contribute.templateUrlLabel")}
-            title={t("contribute.templateUrlTitle")}
-            description={t("contribute.templateUrlDesc")}
-          />
-        </div>
-        <Screenshot
-          src={`${BASE}images/contribute/02-template-picker.png`}
-          alt="GitHub issue template picker showing the three recipe templates"
-        />
-      </Step>
+        icon={<ClipboardPaste className="h-5 w-5 text-primary" />}
+      />
 
       <Step
         number={3}
         title={t("contribute.step3Title")}
         body={t("contribute.step3Body")}
-        fadeUp={fadeUp}
-      >
-        <div className="space-y-6">
-          <Screenshot
-            src={`${BASE}images/contribute/03-form-filled.png`}
-            alt="Structured recipe form filled with the apple tart example"
-            caption={t("contribute.exampleFormTitle")}
-          />
-          <Screenshot
-            src={`${BASE}images/contribute/04-file-filled.png`}
-            alt="File submission form filled with the lasagne example"
-            caption={t("contribute.exampleFileTitle")}
-          />
-          <Screenshot
-            src={`${BASE}images/contribute/05-url-filled.png`}
-            alt="URL submission form filled with the clafoutis example"
-            caption={t("contribute.exampleUrlTitle")}
-          />
-        </div>
-      </Step>
-
-      <Step
-        number={4}
-        title={t("contribute.step4Title")}
-        body={t("contribute.step4Body")}
         fadeUp={fadeUp}
         icon={<Sparkles className="h-5 w-5 text-primary" />}
       >
@@ -133,12 +82,54 @@ export function ContributePage() {
       </Step>
 
       <Step
-        number={5}
-        title={t("contribute.step5Title")}
-        body={t("contribute.step5Body")}
+        number={4}
+        title={t("contribute.step4Title")}
+        body={t("contribute.step4Body")}
         fadeUp={fadeUp}
         icon={<GitPullRequest className="h-5 w-5 text-primary" />}
       />
+
+      <motion.section
+        className="px-6 sm:px-10 pt-12 max-w-3xl lg:max-w-5xl mx-auto"
+        initial={fadeUp}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <h2 className="font-headline text-xl font-bold text-primary tracking-[-0.02em] mb-2">
+          {t("contribute.otherTitle")}
+        </h2>
+        <p className="text-sm text-foreground/80 leading-relaxed mb-4">{t("contribute.otherBody")}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <TemplateCard
+            icon={<ImageIcon className="h-5 w-5" />}
+            label={t("contribute.templateFileLabel")}
+            title={t("contribute.templateFileTitle")}
+            description={t("contribute.templateFileDesc")}
+          />
+          <TemplateCard
+            icon={<LinkIcon className="h-5 w-5" />}
+            label={t("contribute.templateUrlLabel")}
+            title={t("contribute.templateUrlTitle")}
+            description={t("contribute.templateUrlDesc")}
+          />
+          <TemplateCard
+            icon={<ListChecks className="h-5 w-5" />}
+            label={t("contribute.templateFormLabel")}
+            title={t("contribute.templateFormTitle")}
+            description={t("contribute.templateFormDesc")}
+          />
+        </div>
+        <a
+          href={TEMPLATE_PICKER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-primary font-semibold hover:underline"
+        >
+          {t("contribute.otherCta")}
+          <ArrowRight className="h-3.5 w-3.5" />
+        </a>
+      </motion.section>
 
       <motion.section
         className="px-6 sm:px-10 pt-10 max-w-3xl lg:max-w-5xl mx-auto"
@@ -227,38 +218,5 @@ function TemplateCard({
       <h3 className="font-headline text-lg font-bold text-foreground tracking-[-0.02em]">{title}</h3>
       <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
     </article>
-  )
-}
-
-function Screenshot({
-  src,
-  alt,
-  caption,
-}: {
-  src: string
-  alt: string
-  caption?: string
-}) {
-  return (
-    <figure className="bg-surface-high rounded-2xl overflow-hidden border border-outline/10 shadow-ambient">
-      {caption && (
-        <figcaption className="bg-surface-container/60 px-5 py-3 border-b border-outline/10 flex items-center gap-2">
-          <div className="flex gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
-            <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-            <span className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-          </div>
-          <span className="text-xs font-semibold text-foreground/70 ml-2">{caption}</span>
-        </figcaption>
-      )}
-      <a href={src} target="_blank" rel="noopener noreferrer" className="block">
-        <img
-          src={src}
-          alt={alt}
-          loading="lazy"
-          className="w-full h-auto block bg-white"
-        />
-      </a>
-    </figure>
   )
 }

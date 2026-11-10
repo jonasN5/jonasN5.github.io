@@ -3,6 +3,8 @@ import { resolve } from "node:path"
 import { extractStructured } from "./lib/extract-structured.mjs"
 import { extractFromUrl } from "./lib/extract-url.mjs"
 import { extractFromFile } from "./lib/extract-file.mjs"
+import { extractFromText } from "./lib/extract-text.mjs"
+import { downloadIssueCover } from "./lib/cover-upload.mjs"
 import { translateRecipe } from "./lib/translate.mjs"
 import { fetchCoverImage } from "./lib/unsplash.mjs"
 import { writeRecipe } from "./lib/write-recipe.mjs"
@@ -31,7 +33,8 @@ async function main() {
     console.log(`Detected template: ${template}`)
 
     let recipe
-    if (template === "structured") recipe = await extractStructured(issue)
+    if (template === "text") recipe = await extractFromText(issue)
+    else if (template === "structured") recipe = await extractStructured(issue)
     else if (template === "url") recipe = await extractFromUrl(issue)
     else if (template === "file") recipe = await extractFromFile(issue)
     else throw new Error(`Unsupported template: ${template}`)
@@ -42,7 +45,15 @@ async function main() {
     const translations = await translateRecipe(recipe)
 
     console.log("Fetching cover image...")
-    const cover = await fetchCoverImage(recipe.slug, recipe, REPO_ROOT)
+    let cover = null
+    let coverError = null
+    try {
+      cover = await downloadIssueCover(issue.body || "", recipe.slug, REPO_ROOT)
+    } catch (err) {
+      coverError = err.message
+      console.warn(`Could not use the photo from the issue: ${coverError}`)
+    }
+    cover = cover ?? (await fetchCoverImage(recipe.slug, recipe, REPO_ROOT))
 
     console.log("Writing recipe files...")
     await writeRecipe({ repoRoot: REPO_ROOT, recipe, translations, cover })
@@ -62,7 +73,7 @@ async function main() {
 
     await commentOnIssue(
       issue.number,
-      `Nouvelle recette générée par Mistral AI : ${prUrl}\n\n- Catégorie : ${recipe.category}\n- Difficulté : ${recipe.difficulty}\n- ${recipe.steps.length} étapes, ${recipe.ingredients.reduce((n, g) => n + g.items.length, 0)} ingrédients\n- Traductions : français, allemand, anglais, espagnol` + ATTEMPT_MARKER
+      `Nouvelle recette générée par Mistral AI : ${prUrl}\n\n- Catégorie : ${recipe.category}\n- Difficulté : ${recipe.difficulty}\n- ${recipe.steps.length} étapes, ${recipe.ingredients.reduce((n, g) => n + g.items.length, 0)} ingrédients\n- Traductions : français, allemand, anglais, espagnol\n- Photo : ${describeCover(cover, coverError)}` + ATTEMPT_MARKER
     )
     console.log(`Done: ${prUrl}`)
   } catch (err) {
@@ -83,12 +94,19 @@ async function readEvent() {
 }
 
 function detectTemplate(labels, body) {
+  if (body.includes("### Texte de la recette")) return "text"
   if (body.includes("### URL de la recette")) return "url"
   if (body.includes("### Fichier de la recette")) return "file"
   if (labels.includes("needs-formatting")) {
     return body.includes("### Fichier") ? "file" : "url"
   }
   return "structured"
+}
+
+function describeCover(cover, coverError) {
+  if (cover?.fromIssue) return "photo jointe à l'issue"
+  const fallback = cover ? "photo Unsplash" : "image par défaut"
+  return coverError ? `${fallback} (la photo jointe n'a pas pu être utilisée : ${coverError})` : fallback
 }
 
 function validateRecipeShape(recipe) {
