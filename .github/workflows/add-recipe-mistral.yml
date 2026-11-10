@@ -14,8 +14,44 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  add-recipe:
+  # Abuse protection for a public repo: cap Mistral attempts to DAILY_LIMIT per
+  # rolling 24h. Each attempt leaves one bot comment carrying a hidden marker
+  # (see ATTEMPT_MARKER in scripts/add-recipe.mjs); blocked runs don't add one,
+  # so spam that gets rejected doesn't eat into the quota.
+  quota:
     if: contains(github.event.issue.labels.*.name, 'recipe-submission')
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.check.outputs.allowed }}
+    steps:
+      - name: Check daily Mistral quota
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DAILY_LIMIT: ${{ vars.RECIPE_DAILY_LIMIT || '5' }}
+          AUTHOR_ASSOCIATION: ${{ github.event.issue.author_association }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          if [ "$AUTHOR_ASSOCIATION" = "OWNER" ]; then
+            echo "Issue opened by the repo owner: quota not enforced."
+            echo "allowed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          since=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          used=$(gh api --paginate "repos/$GITHUB_REPOSITORY/issues/comments?since=$since&per_page=100" \
+            --jq "[.[] | select(.user.login == \"github-actions[bot]\" and .created_at >= \"$since\" and (.body | contains(\"<!-- recipe-intake-attempt -->\")))] | length" \
+            | awk '{ s += $1 } END { print s + 0 }')
+          echo "Mistral attempts in the last 24h: $used / $DAILY_LIMIT"
+          if [ "$used" -lt "$DAILY_LIMIT" ]; then
+            echo "allowed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "allowed=false" >> "$GITHUB_OUTPUT"
+            gh issue comment "$ISSUE_NUMBER" -R "$GITHUB_REPOSITORY" --body "La limite quotidienne de $DAILY_LIMIT recettes générées automatiquement est atteinte. Réessayez demain en modifiant cette issue (n'importe quelle modification relance la génération)."
+          fi
+
+  add-recipe:
+    needs: quota
+    if: needs.quota.outputs.allowed == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

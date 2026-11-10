@@ -1,4 +1,4 @@
-export const DIFFICULTY_ORDER = ["Facile", "Medio", "Difficile"]
+export const DIFFICULTY_ORDER = ["Facile", "Moyen", "Difficile"]
 
 export function sortDifficulties(difficulties: string[]): string[] {
   return [...difficulties].sort((a, b) => {
@@ -12,17 +12,15 @@ export function sortDifficulties(difficulties: string[]): string[] {
 }
 
 export const CATEGORY_ORDER = [
-  "Antipasti",
-  "Pasta",
-  "Gnocchi",
-  "Risotto",
-  "Insalate",
-  "Secondi",
-  "Pizze",
-  "Pane",
-  "Dolci",
-  "Bambini",
-  "Breakfast",
+  "Entrées",
+  "Pâtes",
+  "Salades",
+  "Plats",
+  "Pizzas",
+  "Pains",
+  "Desserts",
+  "Enfants",
+  "Petit-déjeuner",
   "Brunch",
 ]
 

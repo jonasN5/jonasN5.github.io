@@ -63,7 +63,7 @@ export async function extractFromUrl(issue) {
       "You extract a recipe from web-page text and output French-language JSON. " +
       "All free-text fields (title, description, ingredients, steps, tips, history) must be in French, translating if needed. " +
       "The slug must be URL-safe (lowercase ASCII, digits, hyphens). Tags are 5-12 French lowercase hyphenated words. " +
-      "Pick one difficulty from Facile/Medio/Difficile and one category from the allowed list. " +
+      "Pick one difficulty from Facile/Moyen/Difficile and one category from the allowed list. " +
       "If a field is not in the source, use an empty string or empty array.",
     user: `Recipe title suggestion: ${fields.title}\nUser notes: ${fields.notes || "(none)"}\nSource URL: ${fields.url}\n\nPage text:\n${pageText}`,
     schema: baseRecipeJsonSchema,

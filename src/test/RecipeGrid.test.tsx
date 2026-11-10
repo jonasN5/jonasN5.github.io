@@ -7,28 +7,28 @@ import type { RecipeSummary } from "@/types/recipe"
 
 const mockRecipes: RecipeSummary[] = [
   {
-    slug: "pasta-carbonara",
-    title: "Pasta alla Carbonara",
-    description: "La vera carbonara romana.",
-    images: { cover: "images/recipes/pasta-carbonara/cover.svg", web: "images/recipes/pasta-carbonara/cover.svg" },
+    slug: "soupe-a-l-oignon",
+    title: "Soupe à l'oignon",
+    description: "La soupe gratinée des bistrots parisiens.",
+    images: { cover: "images/recipes/soupe-a-l-oignon/cover.svg", web: "images/recipes/soupe-a-l-oignon/cover.svg" },
     prepTime: 10,
     cookTime: 15,
     servings: 4,
-    difficulty: "Medio",
-    category: "Antipasti",
-    tags: ["pasta"],
+    difficulty: "Moyen",
+    category: "Entrées",
+    tags: ["soupe"],
   },
   {
-    slug: "tiramisu",
-    title: "Tiramisù Classico",
+    slug: "tarte-tatin",
+    title: "Tarte Tatin",
     description: "Il dolce più amato.",
-    images: { cover: "images/recipes/tiramisu/cover.svg", web: "images/recipes/tiramisu/cover.svg" },
+    images: { cover: "images/recipes/tarte-tatin/cover.svg", web: "images/recipes/tarte-tatin/cover.svg" },
     prepTime: 30,
     cookTime: 0,
     servings: 8,
     difficulty: "Facile",
-    category: "Dolci",
-    tags: ["dolce"],
+    category: "Desserts",
+    tags: ["dessert"],
   },
 ]
 
@@ -59,15 +59,15 @@ describe("RecipeGrid", () => {
 
   it("renders a card per recipe", () => {
     renderGrid({ recipes: mockRecipes })
-    expect(screen.getByText("Pasta alla Carbonara")).toBeInTheDocument()
-    expect(screen.getByText("Tiramisù Classico")).toBeInTheDocument()
+    expect(screen.getByText("Soupe à l'oignon")).toBeInTheDocument()
+    expect(screen.getByText("Tarte Tatin")).toBeInTheDocument()
   })
 
   it("links each card to its recipe detail page", () => {
     renderGrid({ recipes: mockRecipes })
-    const carbonaraLink = screen.getByText("Pasta alla Carbonara").closest("a")
-    expect(carbonaraLink).toHaveAttribute("href", "/recipe/pasta-carbonara")
-    const tiramisuLink = screen.getByText("Tiramisù Classico").closest("a")
-    expect(tiramisuLink).toHaveAttribute("href", "/recipe/tiramisu")
+    const soupeLink = screen.getByText("Soupe à l'oignon").closest("a")
+    expect(soupeLink).toHaveAttribute("href", "/recipe/soupe-a-l-oignon")
+    const tatinLink = screen.getByText("Tarte Tatin").closest("a")
+    expect(tatinLink).toHaveAttribute("href", "/recipe/tarte-tatin")
   })
 })
