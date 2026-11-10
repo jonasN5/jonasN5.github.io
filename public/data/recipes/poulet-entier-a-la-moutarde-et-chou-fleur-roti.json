@@ -1,0 +1,343 @@
+{
+  "slug": "poulet-entier-a-la-moutarde-et-chou-fleur-roti",
+  "title": "Poulet entier à la moutarde et chou-fleur rôti",
+  "description": "Un poulet entier savoureux enrobé d'une marinade à la moutarde, accompagné de chou-fleur rôti pour un repas complet et gourmand. La cuisson en deux temps assure une viande tendre et une peau croustillante.",
+  "prepTime": 25,
+  "cookTime": 60,
+  "servings": 6,
+  "difficulty": "Moyen",
+  "category": "Plats",
+  "tags": [
+    "poulet",
+    "moutarde",
+    "chou-fleur",
+    "rôti",
+    "plat-principal",
+    "festif",
+    "saisonnier",
+    "facile-a-preparer",
+    "cuisson-au-four",
+    "sans-gluten",
+    "viande",
+    "légume",
+    "familial"
+  ],
+  "ingredients": [
+    {
+      "items": [
+        "1 poulet entier (1,6 kg)",
+        "3 cuillères à soupe de moutarde",
+        "2 cuillères à soupe d'huile d'olive",
+        "1 oignon émincé finement (ou 2 échalotes)",
+        "2 gousses d'ail hachées",
+        "1 cuillère à café de paprika",
+        "Sel et poivre noir"
+      ],
+      "group": "Pour le poulet"
+    },
+    {
+      "items": [
+        "1 chou-fleur coupé en petites fleurettes"
+      ],
+      "group": "Pour le chou-fleur"
+    },
+    {
+      "items": [
+        "1/2 verre d'eau"
+      ],
+      "group": "Pour la cuisson"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Préchauffez le four à 210°C."
+    },
+    {
+      "text": "Dans un bol, mélangez la moutarde, l'huile d'olive, l'ail, l'oignon, le paprika, du sel et du poivre pour obtenir une marinade homogène."
+    },
+    {
+      "text": "Soulevez délicatement la peau du poulet (blancs et cuisses) pour y glisser une partie du mélange à la moutarde. Badigeonnez ensuite généreusement tout l'extérieur du poulet avec le reste de la préparation."
+    },
+    {
+      "text": "Placez le poulet dans un grand plat allant au four. Versez le demi-verre d'eau directement au fond du plat (sans mouiller le poulet)."
+    },
+    {
+      "text": "Enfournez à 210°C pendant 20 minutes pour saisir la viande et bloquer les jus."
+    },
+    {
+      "text": "Baissez le thermostat à 180°C et laissez cuire pendant 25 minutes. Si possible, arrosez le poulet une fois avec le jus du fond du plat."
+    },
+    {
+      "text": "Sortez brièvement le plat du four. Disposez les fleurettes de chou-fleur tout autour du poulet et mélangez-les bien avec une cuillère pour les enrober du jus à la moutarde."
+    },
+    {
+      "text": "Enfournez à nouveau à 180°C pour les 40 dernières minutes de cuisson."
+    },
+    {
+      "text": "Arrosez le poulet une dernière fois. Si la peau n'est pas assez brune, activez le mode Gril pendant les 5 dernières minutes en surveillant attentivement."
+    }
+  ],
+  "tips": [
+    "Pour une peau encore plus croustillante, séchez bien le poulet avec du papier absorbant avant de l'enfourner.",
+    "Vous pouvez remplacer l'oignon par des échalotes pour une saveur plus douce.",
+    "Si vous préférez un chou-fleur plus tendre, faites-le précuire 5 minutes à l'eau bouillante avant de l'ajouter au plat.",
+    "Servez avec des pommes de terre rôties ou une salade verte pour un repas complet.",
+    "Conservez les restes au réfrigérateur dans les 2 heures et réchauffez-les à couvert pour éviter qu'ils ne sèchent."
+  ],
+  "history": "Cette recette s'inspire des techniques traditionnelles de cuisson du poulet entier, popularisées en France pour les repas familiaux dominicaux. L'ajout de moutarde et de chou-fleur, inspiré des influences culinaires européennes, apporte une touche moderne tout en restant accessible. Le poulet entier est un classique intemporel, souvent associé aux repas conviviaux et aux fêtes familiales.",
+  "source": "Recette adaptée d'une méthode traditionnelle de cuisson du poulet entier, popularisée dans les foyers français.",
+  "images": {
+    "cover": "images/recipes/poulet-entier-a-la-moutarde-et-chou-fleur-roti/placeholder.svg",
+    "web": "images/recipes/poulet-entier-a-la-moutarde-et-chou-fleur-roti/placeholder.svg"
+  },
+  "stepCount": 9,
+  "ingredientCount": 9,
+  "translations": {
+    "de": {
+      "title": "Ganzes Hähnchen mit Senf und gebratenem Blumenkohl",
+      "description": "Ein ganzes Hähnchen, das in einer würzigen Senfmarinade eingelegt und mit gebratenem Blumenkohl serviert wird – ein vollständiges und köstliches Gericht. Die zweistufige Garzeit sorgt für zartes Fleisch und knusprige Haut.",
+      "tags": [
+        "hähnchen",
+        "senf",
+        "blumenkohl",
+        "gebraten",
+        "hauptgericht",
+        "festlich",
+        "saisonabhängig",
+        "einfach-zubereiten",
+        "backofen",
+        "glutenfrei",
+        "fleisch",
+        "gemüse",
+        "familienfreundlich"
+      ],
+      "ingredients": [
+        {
+          "items": [
+            "1 ganzes Hähnchen (1,6 kg)",
+            "3 Esslöffel Senf",
+            "2 Esslöffel Olivenöl",
+            "1 fein gehackte Zwiebel (oder 2 Schalotten)",
+            "2 Knoblauchzehen, gehackt",
+            "1 Teelöffel Paprikapulver",
+            "Salz und schwarzer Pfeffer"
+          ],
+          "group": "Für das Hähnchen"
+        },
+        {
+          "items": [
+            "1 Blumenkohl, in kleine Röschen zerteilt"
+          ],
+          "group": "Für den Blumenkohl"
+        },
+        {
+          "items": [
+            "1/2 Glas Wasser"
+          ],
+          "group": "Für die Garzeit"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Heizen Sie den Backofen auf 210°C vor."
+        },
+        {
+          "text": "Verrühren Sie in einer Schüssel Senf, Olivenöl, Knoblauch, Zwiebel, Paprikapulver, Salz und Pfeffer zu einer glatten Marinade."
+        },
+        {
+          "text": "Heben Sie die Haut des Hähnchens (Brust und Keulen) vorsichtig an und streichen Sie einen Teil der Marinade darunter. Bestreichen Sie anschließend das gesamte Hähnchen mit dem restlichen Marinadenansatz."
+        },
+        {
+          "text": "Legen Sie das Hähnchen in eine große ofenfeste Form. Gießen Sie das halbe Glas Wasser direkt auf den Boden der Form (ohne das Hähnchen zu benetzen)."
+        },
+        {
+          "text": "Backen Sie das Hähnchen bei 210°C für 20 Minuten, um das Fleisch anzubraten und die Säfte zu binden."
+        },
+        {
+          "text": "Reduzieren Sie die Temperatur auf 180°C und lassen Sie das Hähnchen weitere 25 Minuten garen. Tränken Sie es dabei nach Möglichkeit einmal mit dem Fond aus der Form."
+        },
+        {
+          "text": "Nehmen Sie die Form kurz aus dem Ofen. Verteilen Sie die Blumenkohlröschen rund um das Hähnchen und vermengen Sie sie mit dem Senf-Fond aus der Form."
+        },
+        {
+          "text": "Backen Sie das Gericht bei 180°C für weitere 40 Minuten."
+        },
+        {
+          "text": "Tränken Sie das Hähnchen ein letztes Mal. Falls die Haut nicht knusprig genug ist, schalten Sie für die letzten 5 Minuten den Grillmodus ein und beobachten Sie den Prozess sorgfältig."
+        }
+      ],
+      "tips": [
+        "Für eine besonders knusprige Haut trocknen Sie das Hähnchen vor dem Backen mit Küchenpapier ab.",
+        "Ersetzen Sie die Zwiebel durch Schalotten für einen milderen Geschmack.",
+        "Für zarteren Blumenkohl blanchieren Sie ihn 5 Minuten in kochendem Wasser, bevor Sie ihn in die Form geben.",
+        "Servieren Sie das Gericht mit Ofenkartoffeln oder einem grünen Salat für eine vollständige Mahlzeit.",
+        "Bewahren Sie Reste innerhalb von 2 Stunden im Kühlschrank auf und erwärmen Sie sie abgedeckt, um ein Austrocknen zu vermeiden."
+      ],
+      "history": "Dieses Rezept basiert auf traditionellen Techniken zur Zubereitung eines ganzen Hähnchens, die in Frankreich besonders für sonntägliche Familienmahlzeiten populär sind. Die Kombination aus Senf und Blumenkohl, inspiriert von europäischen Kochtraditionen, verleiht dem Gericht eine moderne Note bei gleichzeitig einfacher Zubereitung. Das ganze Hähnchen gilt als zeitloser Klassiker, der oft mit geselligen und festlichen Familienessen in Verbindung gebracht wird."
+    },
+    "en": {
+      "title": "Whole Chicken with Mustard and Roasted Cauliflower",
+      "description": "A flavorful whole chicken coated in a mustard marinade, served with roasted cauliflower for a complete and hearty meal. The two-stage cooking process ensures tender meat and crispy skin.",
+      "tags": [
+        "chicken",
+        "mustard",
+        "cauliflower",
+        "roasted",
+        "main-dish",
+        "festive",
+        "seasonal",
+        "easy-to-prepare",
+        "oven-cooking",
+        "gluten-free",
+        "meat",
+        "vegetable",
+        "family-friendly"
+      ],
+      "ingredients": [
+        {
+          "items": [
+            "1 whole chicken (1.6 kg)",
+            "3 tablespoons mustard",
+            "2 tablespoons olive oil",
+            "1 finely sliced onion (or 2 shallots)",
+            "2 cloves garlic, chopped",
+            "1 teaspoon paprika",
+            "Salt and black pepper"
+          ],
+          "group": "For the chicken"
+        },
+        {
+          "items": [
+            "1 cauliflower, cut into small florets"
+          ],
+          "group": "For the cauliflower"
+        },
+        {
+          "items": [
+            "1/2 cup water"
+          ],
+          "group": "For cooking"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Preheat the oven to 210°C (410°F)."
+        },
+        {
+          "text": "In a bowl, mix the mustard, olive oil, garlic, onion, paprika, salt, and pepper to make a smooth marinade."
+        },
+        {
+          "text": "Gently lift the skin of the chicken (breasts and thighs) and slide some of the mustard mixture underneath. Generously coat the outside of the chicken with the remaining marinade."
+        },
+        {
+          "text": "Place the chicken in a large ovenproof dish. Pour the half cup of water directly into the bottom of the dish (avoid wetting the chicken)."
+        },
+        {
+          "text": "Bake at 210°C (410°F) for 20 minutes to sear the meat and seal in the juices."
+        },
+        {
+          "text": "Reduce the oven temperature to 180°C (350°F) and continue cooking for 25 minutes. If possible, baste the chicken once with the juices from the bottom of the dish."
+        },
+        {
+          "text": "Remove the dish briefly from the oven. Arrange the cauliflower florets around the chicken and mix them well with a spoon to coat them in the mustard juices."
+        },
+        {
+          "text": "Return to the oven at 180°C (350°F) for the final 40 minutes of cooking."
+        },
+        {
+          "text": "Baste the chicken one last time. If the skin isn’t brown enough, switch to the grill setting for the last 5 minutes, keeping a close eye on it."
+        }
+      ],
+      "tips": [
+        "For extra crispy skin, pat the chicken dry with paper towels before baking.",
+        "Replace the onion with shallots for a milder flavor.",
+        "For a softer cauliflower, parboil the florets for 5 minutes before adding them to the dish.",
+        "Serve with roasted potatoes or a green salad for a complete meal.",
+        "Store leftovers in the fridge within 2 hours and reheat covered to prevent drying out."
+      ],
+      "history": "This recipe draws on traditional French techniques for cooking whole chickens, often served at Sunday family meals. The addition of mustard and cauliflower, inspired by European culinary influences, gives it a modern twist while remaining accessible. Whole roast chicken is a timeless classic, often associated with convivial family gatherings and festive occasions."
+    },
+    "es": {
+      "title": "Pollo entero con mostaza y coliflor asada",
+      "description": "Un pollo entero sabroso marinado en mostaza, acompañado de coliflor asada para una comida completa y golosa. La cocción en dos tiempos asegura una carne tierna y una piel crujiente.",
+      "tags": [
+        "pollo",
+        "mostaza",
+        "coliflor",
+        "asado",
+        "plato-principal",
+        "festivo",
+        "estacional",
+        "fácil-de-preparar",
+        "cocción-al-horno",
+        "sin-gluten",
+        "carne",
+        "verdura",
+        "familiar"
+      ],
+      "ingredients": [
+        {
+          "items": [
+            "1 pollo entero (1,6 kg)",
+            "3 cucharadas de mostaza",
+            "2 cucharadas de aceite de oliva",
+            "1 cebolla picada fina (o 2 chalotas)",
+            "2 dientes de ajo picados",
+            "1 cucharadita de pimentón",
+            "Sal y pimienta negra"
+          ],
+          "group": "Para el pollo"
+        },
+        {
+          "items": [
+            "1 coliflor cortada en pequeñas ramifloretes"
+          ],
+          "group": "Para la coliflor"
+        },
+        {
+          "items": [
+            "1/2 vaso de agua"
+          ],
+          "group": "Para la cocción"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Precaliente el horno a 210°C."
+        },
+        {
+          "text": "En un bol, mezcle la mostaza, el aceite de oliva, el ajo, la cebolla, el pimentón, sal y pimienta negra hasta obtener una marinada homogénea."
+        },
+        {
+          "text": "Levante con cuidado la piel del pollo (pechugas y muslos) para introducir parte de la mezcla de mostaza. Luego, unte generosamente el exterior del pollo con el resto de la preparación."
+        },
+        {
+          "text": "Coloque el pollo en una fuente grande apta para horno. Vierta el medio vaso de agua directamente en el fondo de la fuente (sin mojar el pollo)."
+        },
+        {
+          "text": "Hornee a 210°C durante 20 minutos para sellar la carne y retener los jugos."
+        },
+        {
+          "text": "Baje la temperatura a 180°C y deje cocinar durante 25 minutos. Si es posible, riegue el pollo una vez con el jugo del fondo de la fuente."
+        },
+        {
+          "text": "Saque brevemente la fuente del horno. Coloque las ramifloretes de coliflor alrededor del pollo y mézclelas bien con una cuchara para que se impregnen del jugo de mostaza."
+        },
+        {
+          "text": "Hornee nuevamente a 180°C durante los últimos 40 minutos de cocción."
+        },
+        {
+          "text": "Riegue el pollo una última vez. Si la piel no está lo suficientemente dorada, active el modo Grill durante los últimos 5 minutos, vigilando atentamente."
+        }
+      ],
+      "tips": [
+        "Para una piel aún más crujiente, seque bien el pollo con papel absorbente antes de hornearlo.",
+        "Puede reemplazar la cebolla por chalotas para un sabor más suave.",
+        "Si prefiere una coliflor más tierna, precocínela 5 minutos en agua hirviendo antes de añadirla a la fuente.",
+        "Sirva con patatas asadas o una ensalada verde para una comida completa.",
+        "Guarde las sobras en el refrigerador dentro de las 2 horas y caliéntelas tapadas para evitar que se sequen."
+      ],
+      "history": "Esta receta se inspira en las técnicas tradicionales de cocción del pollo entero, popularizadas en Francia para las comidas familiares dominicales. La adición de mostaza y coliflor, inspirada en influencias culinarias europeas, aporta un toque moderno manteniendo la accesibilidad. El pollo entero es un clásico atemporal, a menudo asociado a comidas conviviales y fiestas familiares."
+    }
+  }
+}
