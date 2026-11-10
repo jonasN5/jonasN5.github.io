@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "poulet-entier-a-la-moutarde-et-chou-fleur-roti",
+    "title": "Poulet entier à la moutarde et chou-fleur rôti",
+    "description": "Un poulet entier savoureux enrobé d'une marinade à la moutarde, accompagné de chou-fleur rôti pour un repas complet et gourmand. La cuisson en deux temps assure une viande tendre et une peau croustillante.",
+    "images": {
+      "cover": "images/recipes/poulet-entier-a-la-moutarde-et-chou-fleur-roti/placeholder.svg",
+      "web": "images/recipes/poulet-entier-a-la-moutarde-et-chou-fleur-roti/placeholder.svg"
+    },
+    "prepTime": 25,
+    "cookTime": 60,
+    "servings": 6,
+    "difficulty": "Moyen",
+    "category": "Plats",
+    "tags": [
+      "poulet",
+      "moutarde",
+      "chou-fleur",
+      "rôti",
+      "plat-principal",
+      "festif",
+      "saisonnier",
+      "facile-a-preparer",
+      "cuisson-au-four",
+      "sans-gluten",
+      "viande",
+      "légume",
+      "familial"
+    ],
+    "stepCount": 9,
+    "ingredientCount": 9,
+    "translations": {
+      "de": {
+        "title": "Ganzes Hähnchen mit Senf und gebratenem Blumenkohl",
+        "description": "Ein ganzes Hähnchen, das in einer würzigen Senfmarinade eingelegt und mit gebratenem Blumenkohl serviert wird – ein vollständiges und köstliches Gericht. Die zweistufige Garzeit sorgt für zartes Fleisch und knusprige Haut.",
+        "tags": [
+          "hähnchen",
+          "senf",
+          "blumenkohl",
+          "gebraten",
+          "hauptgericht",
+          "festlich",
+          "saisonabhängig",
+          "einfach-zubereiten",
+          "backofen",
+          "glutenfrei",
+          "fleisch",
+          "gemüse",
+          "familienfreundlich"
+        ]
+      },
+      "en": {
+        "title": "Whole Chicken with Mustard and Roasted Cauliflower",
+        "description": "A flavorful whole chicken coated in a mustard marinade, served with roasted cauliflower for a complete and hearty meal. The two-stage cooking process ensures tender meat and crispy skin.",
+        "tags": [
+          "chicken",
+          "mustard",
+          "cauliflower",
+          "roasted",
+          "main-dish",
+          "festive",
+          "seasonal",
+          "easy-to-prepare",
+          "oven-cooking",
+          "gluten-free",
+          "meat",
+          "vegetable",
+          "family-friendly"
+        ]
+      },
+      "es": {
+        "title": "Pollo entero con mostaza y coliflor asada",
+        "description": "Un pollo entero sabroso marinado en mostaza, acompañado de coliflor asada para una comida completa y golosa. La cocción en dos tiempos asegura una carne tierna y una piel crujiente.",
+        "tags": [
+          "pollo",
+          "mostaza",
+          "coliflor",
+          "asado",
+          "plato-principal",
+          "festivo",
+          "estacional",
+          "fácil-de-preparar",
+          "cocción-al-horno",
+          "sin-gluten",
+          "carne",
+          "verdura",
+          "familiar"
+        ]
+      }
+    }
+  }
+]
